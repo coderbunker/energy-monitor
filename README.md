@@ -4,9 +4,7 @@ Project based on [Open Energy Monitor](https://openenergymonitor.org/)
 
 This project runs on the NodeMCU combined with the ADS1115 Analog Digital Converter and sends the Data to InfluxDB via UDP
 
-The following link gives an example :
-
-[Energy monitors](http://whatnicklife.blogspot.sg/2015/09/experimenting-with-energy-monitors.html)
+The following link gives a complete example : [Energy monitors](http://whatnicklife.blogspot.sg/2015/09/experimenting-with-energy-monitors.html)
 
 
 ## Setup
@@ -24,14 +22,36 @@ It needs the following libraries to work:
 
  *	[Adafruit_ADS1X15](https://github.com/adafruit/Adafruit_ADS1X15)
  *	[ESP8266Wifi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)
- 
+
 Guide to install libraries https://www.arduino.cc/en/Guide/Libraries
 
 ### Server
 
-1. Install InfluxDB : [Link](https://www.influxdata.com/blog/how-to-send-sensor-data-to-influxdb-from-an-arduino-uno/)
-2. Active the HTTP connection : [Link]() 
-3. Active the UDP connection : [Link]()
+1. Install InfluxDB : [Link](https://portal.influxdata.com/downloads)
+
+```$ sudo systemctl start influxdb
+```
+
+2. Active the HTTP connection : [Link](https://docs.gitlab.com/ee/administration/monitoring/performance/influxdb_configuration.html)
+
+``` sudo nano -config /etc/influxdb/influxdb.conf
+```
+
+Change this :
+
+```[http]
+  # Determines whether HTTP endpoint is enabled.
+    enabled = true
+
+  # The bind address used by the HTTP service.
+    bind-address = ":8086"
+
+  # Determines whether user authentication is enabled over HTTP/HTTPS.
+    auth-enabled = false
+```
+
+
+3. Active the UDP connection : [Link](https://www.influxdata.com/blog/how-to-send-sensor-data-to-influxdb-from-an-arduino-uno/)
 
 
 ## Hardware
@@ -39,7 +59,7 @@ Guide to install libraries https://www.arduino.cc/en/Guide/Libraries
 
 ### Bill of Materials
 *	NodeMCU (ESP8266 Wifi)
-*	ADS1115 
+*	ADS1115
 *	YHDC SCT-013-000 CT Sensor (Current Output)
 *	3.5mm Headphone jack to PCB
 *	33 Ohm 3 Watt Resistor
@@ -50,4 +70,3 @@ Guide to install libraries https://www.arduino.cc/en/Guide/Libraries
 Put everything together according to the picture but use 33 Ohm Resistor instead of 330 Ohm Resistor!
 
 [Circuit](https://github.com/coderbunker/energy-monitor/blob/master/circuit_design.jpg)
-
