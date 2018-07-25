@@ -7,7 +7,7 @@ This project runs on the NodeMCU combined with the ADS1115 Analog Digital Conver
 The following link gives a complete example : [Energy monitors](http://whatnicklife.blogspot.sg/2015/09/experimenting-with-energy-monitors.html)
 
 
-## Setup
+## Setup Arduino and Server
 
 
 ### Arduino IDE
@@ -29,17 +29,20 @@ Guide to install libraries https://www.arduino.cc/en/Guide/Libraries
 
 1. Install InfluxDB : [Link](https://portal.influxdata.com/downloads)
 
-```$ sudo systemctl start influxdb
+```
+$ sudo systemctl start influxdb
 ```
 
 2. Active the HTTP connection : [Link](https://docs.gitlab.com/ee/administration/monitoring/performance/influxdb_configuration.html)
 
-``` sudo nano -config /etc/influxdb/influxdb.conf
+```
+sudo nano -config /etc/influxdb/influxdb.conf
 ```
 
 Change this :
 
-```[http]
+```
+[http]
   # Determines whether HTTP endpoint is enabled.
     enabled = true
 
