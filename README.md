@@ -56,6 +56,32 @@ Change this :
 
 3. Active the UDP connection : [Link](https://www.influxdata.com/blog/how-to-send-sensor-data-to-influxdb-from-an-arduino-uno/)
 
+```
+sudo nano -config /etc/influxdb/influxdb.conf
+```
+
+Change this :
+
+```
+[[udp]]
+  enabled = true
+  bind-address = ":8888"
+  database = "arduino"
+```
+
+4. Create the InfluxDB DB :
+
+```
+influx
+
+```
+```
+CREATE DATABASE arduino
+```
+
+
+5. Install Grafana : [Link](http://docs.grafana.org/installation/) [For Start](http://docs.grafana.org/guides/getting_started/)
+
 
 ## Hardware
 
