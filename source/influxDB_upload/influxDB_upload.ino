@@ -1,23 +1,21 @@
 #include <Wire.h>
 #include <Adafruit_ADS1015.h>
-#include <WiFiUdp.h>
 #include <string.h>
 #include <math.h>
 #include <ESP8266WiFi.h>
 #include <InfluxDb.h>
-#include <InfluxData.h>
 
 const char* ssid     = "Agora Space";
 const char* password = "getstuffdone";
 
-#define INFLUXDB_HOST "139.198.177.222"
-#define INFLUXDB_PORT "8089"
+#define INFLUXDB_HOST "206.189.45.190"
+#define INFLUXDB_PORT 8086
 #define INFLUXDB_DATABASE "test"
 
-Influxdb  influx(INFLUXDB_HOST,INFLUXDB_PORT);
+InfluxDB    influx(INFLUXDB_HOST,INFLUXDB_PORT);
 
 
-InfluxData measurement ("temperature_celsius");
+InfluxData  measurement("temperature_celsius");
 
 
 void setup()
@@ -34,8 +32,6 @@ void setup()
   Serial.println(ssid);
   
   WiFi.begin(ssid, password);
-
-  WiFi.getNetworkInfo();
   
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -53,8 +49,10 @@ void setup()
 
 void loop() {
   // put your main code here, to run repeatedly:
+  delay(1000);
   float temperature = random(25);
 
+  InfluxData  measurement("temperature_celsius");
   measurement.addTag("location", "building9");
   measurement.addTag("room", "kitchen");
   measurement.addValue("temperature", temperature);
