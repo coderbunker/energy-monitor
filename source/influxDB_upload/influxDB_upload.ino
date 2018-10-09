@@ -5,11 +5,11 @@
 #include <ESP8266WiFi.h>
 #include <InfluxDb.h>
 
-const char* ssid     = "Agora Space";
-const char* password = "getstuffdone";
+const char* ssid     = "WIFI_SSID";
+const char* password = "WIFI_PASSWORD";
 
-#define INFLUXDB_HOST "206.189.45.190"
-#define INFLUXDB_PORT 8086
+#define INFLUXDB_HOST "IP_ADDRESS"
+#define INFLUXDB_PORT // ! Port number here
 #define INFLUXDB_DATABASE "test"
 
 InfluxDB    influx(INFLUXDB_HOST,INFLUXDB_PORT);
@@ -26,7 +26,6 @@ void setup()
   delay(100);
 
   // * Connecting to specified WiFi
-  Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
@@ -48,15 +47,17 @@ void setup()
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // ! of course this delay shouldn't be used, but for testing it's enough
   delay(1000);
-  float temperature = random(25);
+  float temperature = random(25); //to test out the write to the InfluxDB temperature is just a random number
 
+  //create a measurement object with the measurement-key called "temperature_celsius"
+  //add data
   InfluxData  measurement("temperature_celsius");
   measurement.addTag("location", "building9");
   measurement.addTag("room", "kitchen");
   measurement.addValue("temperature", temperature);
 
-  // write it into db
+  //write new data to the InfluxDB
   influx.write(measurement);
 }
