@@ -50,4 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-source/.vscode/c_cpp_properties.json
+.vscode/arduino.json
+.vscode/c_cpp_properties.json
+.vscode/settings.json
