@@ -5,12 +5,12 @@
 #include <ESP8266WiFi.h>
 #include <InfluxDb.h>
 
-const char* ssid     = "WIFI_SSID";
-const char* password = "WIFI_PASSWORD";
+#define INFLUXDB_HOST "HOST"
+#define INFLUXDB_PORT 0000
+#define INFLUXDB_DATABASE "DATABSE"
 
-#define INFLUXDB_HOST "IP_ADDRESS"
-#define INFLUXDB_PORT // ! Port number here
-#define INFLUXDB_DATABASE "test"
+const char* ssid     = "SSID";
+const char* password = "PASSWORD";
 
 InfluxDB    influx(INFLUXDB_HOST,INFLUXDB_PORT);
 

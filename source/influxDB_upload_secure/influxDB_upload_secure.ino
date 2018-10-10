@@ -5,16 +5,12 @@
 #include <ESP8266WiFi.h>
 #include <InfluxDb.h>
 
-WiFiClientSecure    client;
+#define INFLUXDB_HOST "HOST"
+#define INFLUXDB_PORT 0000
+#define INFLUXDB_DATABASE "DATABSE"
 
-
-
-#define INFLUXDB_HOST "104.248.237.172"
-#define INFLUXDB_PORT 8086
-#define INFLUXDB_DATABASE "test"
-
-const char* ssid     = "Agora Space";
-const char* password = "getstuffdone";
+const char* ssid     = "SSID";
+const char* password = "PASSWORD";
 
 InfluxDB    influx(INFLUXDB_HOST,INFLUXDB_PORT);
 
