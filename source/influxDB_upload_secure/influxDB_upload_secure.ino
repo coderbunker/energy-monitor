@@ -5,6 +5,10 @@
 #include <ESP8266WiFi.h>
 #include <InfluxDb.h>
 
+WiFiClientSecure    client;
+
+
+
 #define INFLUXDB_HOST "104.248.237.172"
 #define INFLUXDB_PORT 8086
 #define INFLUXDB_DATABASE "test"
