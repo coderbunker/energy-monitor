@@ -4,17 +4,35 @@
 #include <math.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
-#include <InfluxDb.h>
+#include <Ticker.h>
+
 //---------------------------------------------------------------------------------------
 #define INFLUXDB_HOST "IP_OF_HOST"
 #define INFLUXDB_PORT PORT_OF_HOST
 #define INFLUXDB_DATABASE "NAME_OF_DATABASE"
 
+#define INFLUXDB_LOCATION "LOCATION"
+#define INFLUXDB_ROOM     "ROOM"
+
 const char* ssid     = "SSID";
 const char* password = "PASSWORD";
 
-#define INFLUXDB_LOCATION "CoderBunker"
-#define INFLUXDB_ROOM     "ThreePhase"
+Ticker tick;
+
+bool tickOccured;
+
+
+void timerCallback() {
+
+      tickOccured = true;
+
+}
+
+void user_init(void)
+{
+    tick.attach(0.2, timerCallback);
+}
+
 
 WiFiUDP             udp;
 
@@ -40,8 +58,9 @@ String PowerAsString;
 
 void setup(void)
 {
+    Wire.setClock(400000);
     Serial.begin(115200); 
-    delay(100);
+    delay(250);
     
     // * Connecting to specified WiFi
     WiFi.begin(ssid, password);
@@ -59,25 +78,31 @@ void setup(void)
     ads.setGain(GAIN_ONE);  
     
     ads.begin();
+    user_init();
 
 }
 
 void loop(void)
 {
-    delay(500);
-    voltage_adc = (calcVrms(64) )/1000.0;  // Sending Data every ~1.5 sec
+    if(tickOccured)
+    {
+        tickOccured = false;
+
+        String line = ("power_measurement,location=" + String(INFLUXDB_LOCATION) + ",room=" + String(INFLUXDB_ROOM) +" power=" + String(power) + ",voltage=" + String(voltage_adc));
+
+        //Prepare Value-Package & Send it off to the Database
+        Serial.println(line);
+        udp.beginPacket(INFLUXDB_HOST,INFLUXDB_PORT);
+
+        udp.print(line);
+        udp.endPacket();
+    }
+    voltage_adc = (calcVrms(32) )/1000.0;
     
     current_coil = ((voltage_adc) * MAX_CURRENT_COIL)/MAX_VOLTAGE_ADC;
     power = current_coil * COIL_WINDING * VOLTAGE_MAINS;
 
-    String line = ("power_measurement,location=" + String(INFLUXDB_LOCATION) + ",room=" + String(INFLUXDB_ROOM) +" power=" + String(power) + ",voltage=" + String(voltage_adc));
-
-    //Prepare Value-Package & Send it off to the Database
-    Serial.println(line);
-    udp.beginPacket(INFLUXDB_HOST,INFLUXDB_PORT);
-
-    udp.print(line);
-    udp.endPacket();
+    
 }
 
 double calcVrms(unsigned int Number_of_Samples)
