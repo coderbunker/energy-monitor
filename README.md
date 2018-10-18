@@ -179,7 +179,7 @@ The power measurement doesn't require 2 ADC, this built is for three phase measu
 
 ### Measurement with test circuit
 
-![test circuit](assets\images\testcircuit_schematic.png)
+![test circuit](https://github.com/joelvonrotz/energy-monitor/blob/master/assets/images/testcircuit_schematic.png)
 
 **L1 ratio** adjustable
 
