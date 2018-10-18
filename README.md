@@ -1,4 +1,4 @@
-![Banner of Super Nanny Monitoring System](assets\banner.png)
+![Banner](https://github.com/joelvonrotz/energy-monitor/blob/master/assets/banner.png)
 
 *Super Nanny Monitory System* is a ESP6288 NodeMCU based monitoring system that measures power consumption and air quality. The MCU collects the data and sends it to the InfluxDB via UDP. 
 
