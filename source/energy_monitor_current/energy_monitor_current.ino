@@ -7,15 +7,18 @@
 #include <Ticker.h>
 
 //---------------------------------------------------------------------------------------
-#define INFLUXDB_HOST "IP_OF_HOST"
-#define INFLUXDB_PORT PORT_OF_HOST
-#define INFLUXDB_DATABASE "NAME_OF_DATABASE"
+#define INFLUXDB_HOST "10.1.0.230"
+#define INFLUXDB_PORT_POWER 6969
+#define INFLUXDB_PORT_SENSOR 6970
 
-#define INFLUXDB_LOCATION "LOCATION"
-#define INFLUXDB_ROOM     "ROOM"
 
-const char* ssid     = "SSID";
-const char* password = "PASSWORD";
+#define INFLUXDB_DATABASE "test"
+
+#define INFLUXDB_LOCATION "coderbunker"
+#define INFLUXDB_ROOM     "threephase"
+
+const char* ssid     = "Agora Space";
+const char* password = "getstuffdone";
 
 Ticker tick;
 
@@ -88,7 +91,9 @@ void loop(void)
     {
         tickOccured = false;
 
-        String line = ("power_measurement,location=" + String(INFLUXDB_LOCATION) + ",room=" + String(INFLUXDB_ROOM) +" power=" + String(power) + ",voltage=" + String(voltage_adc));
+        String line = ("power_watt,location=" + String(INFLUXDB_LOCATION) + ",room=" + String(INFLUXDB_ROOM) +" value=" + String(power));
+
+        String line = ("air_quality,location=" + ",room=" +",daniel=dumm"+ " temperature_c=xy,co2_ppm=xy,");
 
         //Prepare Value-Package & Send it off to the Database
         Serial.println(line);
