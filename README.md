@@ -4,6 +4,8 @@
 
 This is the hardware/firmware repository which contains wiring images, mapping lists and other documentations.
 
+**The Main Programm is [Writing_Database.ino](https://github.com/joelvonrotz/energy-monitor/blob/master/source/Writing_Database/Writing_Database.ino)**
+
 ## Measurements Types
 
 The device is split into two devices: power measurement and air quality, so that means double the microcontroller is required instead of a single one.
