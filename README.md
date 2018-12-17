@@ -34,6 +34,21 @@ Faster programmer can use the Arduino extension by Microsoft for Visual Studio C
 
 [Link to extension](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino)
 
+### Board support
+
+As the project uses NodeMCU, you will need to set up the IDE to support it. This method works with both Visual Studio Code or if you are using the IDE directly.
+- Open the Arduino IDE (This is used for VSCode also)
+- Open the preferences pane
+- Under `Aditional Boards Manager URLs` paste: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
+- Close the preferences
+- Close and reopen the IDE
+- Go to `Tools -> Board ... -> Board Manager`
+- Search ESP8266
+- Find `esp8266 by ESP8266 Community` and install
+- Go to `Tools -> Board` and select NodeMCU 1.0 (if that matches the NodeMCU that you are using)
+- If using VSCode, press `ctrl+shift+P` or `cmd+shift+P` and type/select `Arduino: Board Config`
+- Select NodeMCU 1.0 (if that matches the NodeMCU that you are using)
+
 ### Libraries
 
 To correctly use this program, some libraries need to be installed first. Below should all the needed libraries be listed.
