@@ -223,7 +223,7 @@ The ratio between the currents and voltages are pretty consistent and that's a g
 
 ### Measurement of three phase cable
 
-Every single wire needs to be measured separately, because of the 120° offset to each other. Measuring all wires together would lead to a total current, which isn't an Addition of all single currents together (It is, but there are negative currents, which the circuit can't measure). Below is a table consisting of measurements of each wire.
+Every single wire needs to be measured separately, because of the 120° offset to each other. Measuring all wires together would lead to a total current, which isn't an Addition of all single currents together. Below is able consisting of measurements of each wire.
 
 | Cable ColorThickness | Current IP1 | Voltage U1 (Arduino) | Voltage (UP1\_calc) calculated with current IP1 | Measurement-resistor Rm | Voltage Arduino(U1: UP1\_calc) |
 |:--------------------:|:-----------:|:--------------------:|:-----------------------------------------------:|:-----------------------:|:------------------------------:|
