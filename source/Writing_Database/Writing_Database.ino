@@ -61,6 +61,8 @@ String getConfigValue(String mac_address, int index);
 String MacToString(const uint8_t* mac);
 
 
+
+
 //InfluxDB initialisation -- START --------------------------------------------
 WiFiUDP         udp;
 
@@ -117,10 +119,57 @@ float TVOC = 0;
 String line;
 String PowerAsString;
 
+long double Timer=0;
+int n=0;
+
+
+void SWI(void)
+{
+
+  if(n == 15){
+  digitalWrite(D5,LOW);
+  delay(100);
+  digitalWrite(D5,HIGH);  
+  Serial.println("Reset Sensor");
+  CCS811.begin();    
+  n=0;
+  while(n<6)
+  {
+    delay(400);
+    n++;  
+    influxPowerPort.write(dataPower);
+    influxPowerPort.write(dataAirQuality);
+  }
+  }
+  else{
+    n++;  
+  }
+}
+
+void reconnectWifi(void)
+{
+    WiFi.softAPdisconnect (true);
+    static int n = 0;
+    n=0;
+    WiFi.begin(ssid, password);
+    
+    while (WiFi.status() != WL_CONNECTED || n > 100) {
+        delay(500);
+        Serial.print("."); 
+        n++;
+    }
+    Serial.print("reconnected");
+}
 void setup(void)
 {
+    /*-------------------Software Interupt-----------------------------------*/
+    pinMode(D5,OUTPUT);
+    digitalWrite(D5,HIGH);
+    //-----------------------------------------------------------------------//
+    //---------------------------Wifihotspo--from--ESP--disable---------------
+    WiFi.softAPdisconnect (true);
     Wire.setClock(400000);
-    Serial.begin(115200); 
+    Serial.begin(115200);                        
     delay(1000);
   
     // WiFi Connection -- START -----------------------------------------------
@@ -171,11 +220,12 @@ void setup(void)
     if(isQualityType)
     {        
         Si7021.begin();
+        CCS811.begin();
         
         if(!CCS811.begin())
         {
             Serial.println("Failed to start CCS811! Please check your wiring.");
-            while(1)
+            while(!CCS811.available())
             {
                 delay(200);
             }
@@ -209,11 +259,23 @@ void setup(void)
     DB_Updater.attach(1, timerCallback);
 
 
-}
+    }
 
 void loop(void)
 {
 
+     Timer = Timer+1;
+     if(Timer >= 80){
+      SWI();    
+      delay(100);
+      Timer=0;
+    }
+  
+   if(WiFi.status() != WL_CONNECTED)
+    {
+      reconnectWifi();      
+    }
+    
     if(tickOccured)
     {
 
@@ -243,7 +305,6 @@ void loop(void)
         temperature = Si7021.getTemp();
         if(CCS811.available())
         {
-            
             if(!CCS811.readData())
             {
                 eCO2=CCS811.geteCO2();
@@ -252,10 +313,6 @@ void loop(void)
             else
             {
                 Serial.println("ERROR!");
-                while(1)
-                {
-                    delay(200);
-                }
             }
         }
     }
