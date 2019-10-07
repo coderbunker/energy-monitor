@@ -27,6 +27,7 @@
 #define INDEX_LOCATION  1
 #define INDEX_ROOM      2
 #define INDEX_TYPE      3
+#define INDEX_Offset    4
 
 #define SparkFun_Si7021 Weather
 
@@ -41,13 +42,13 @@ const char* password = "getstuffdone";
 const String config[DEVICE_COUNT][TABLE_WIDTH]
 {
     //MAC Address          location          room            type
-    {"b8:77:10:c2:dd:bc", "building9",      "fusebox",      "power"     },
-    {"44:39:69:3a:7d:80", "building1",      "dummy",        "power"     },
-    {"e8:42:69:3a:7d:80", "coderbunker",    "artoffice",    "power"     },
-    {"cd:36:69:3a:7d:80", "coderbunker",    "kitchen",      "quality"   },
-    {"3d:78:10:c2:dd:bc", "coderbunker",    "artoffice",    "quality"   },
-    {"fb:61:69:3a:7d:80", "coderbunker",    "classroom",    "quality"   },
-    {"49:7a:10:c2:dd:bc", "coderbunker",    "meetingroom",  "quality"   }
+    {"b8:77:10:c2:dd:bc", "building9",      "fusebox",      "power"  },
+    {"44:39:69:3a:7d:80", "building1",      "dummy",        "power"  },
+    {"e8:42:69:3a:7d:80", "coderbunker",    "artoffice",    "power"  },
+    {"cd:36:69:3a:7d:80", "coderbunker",    "kitchen",      "quality"},
+    {"3d:78:10:c2:dd:bc", "coderbunker",    "artoffice",    "quality"},
+    {"fb:61:69:3a:7d:80", "coderbunker",    "classroom",    "quality"},
+    {"49:7a:10:c2:dd:bc", "coderbunker",    "meetingroom",  "quality"}
 };
 
 String  nameLocation = "";
@@ -59,6 +60,8 @@ bool    isQualityType;
 
 String getConfigValue(String mac_address, int index);
 String MacToString(const uint8_t* mac);
+
+
 
 
 //InfluxDB initialisation -- START --------------------------------------------
@@ -74,11 +77,17 @@ InfluxDB_Data   dataAirQuality("quality_measurement");
 
 //Ticker stuff -- START -------------------------------------------------------
 Ticker  DB_Updater;
-
+int Timer=0;
 bool tickOccured = false;
 
 void timerCallback() {
+  if(Timer >= 50){
       tickOccured = true;
+      Timer=0;
+  }
+  else{
+      Timer++;
+  }
 }
 //Ticker stuff -- UDP ---------------------------------------------------------
 
@@ -113,14 +122,65 @@ float temperature = 0;
 
 float eCO2 = 0;
 float TVOC = 0;
+float eCO2OLD = 0;
+float TVOCOLD = 0;
+
+int writeflag =0;
 
 String line;
 String PowerAsString;
 
+
+int n=0;
+
+
+void SWI(void)
+{
+  if(n == 3)
+  {
+   digitalWrite(D5,LOW);
+   delay(100);
+   digitalWrite(D5,HIGH);  
+   Serial.println("Reset Sensor");
+   CCS811.begin();    
+   n=0;
+     while(n<5)
+     {
+        delay(1000);
+        n++;  
+     }
+    n=0;
+  }
+  else
+  {
+    n++;  
+  }
+}
+
+void reconnectWifi(void)
+{
+    WiFi.softAPdisconnect (true);
+    static int n = 0;
+    n=0;
+    WiFi.begin(ssid, password);
+    
+    while (WiFi.status() != WL_CONNECTED || n > 100) {
+        delay(500);
+        Serial.print("."); 
+        n++;
+    }
+    Serial.print("reconnected");
+}
 void setup(void)
 {
+    /*-------------------Software Interupt-----------------------------------*/
+    pinMode(D5,OUTPUT);
+    digitalWrite(D5,HIGH);
+    //-----------------------------------------------------------------------//
+    //---------------------------Wifihotspo--from--ESP--disable---------------
+    WiFi.softAPdisconnect (true);
     Wire.setClock(400000);
-    Serial.begin(115200); 
+    Serial.begin(115200);                        
     delay(1000);
   
     // WiFi Connection -- START -----------------------------------------------
@@ -171,11 +231,12 @@ void setup(void)
     if(isQualityType)
     {        
         Si7021.begin();
+        CCS811.begin();
         
         if(!CCS811.begin())
         {
             Serial.println("Failed to start CCS811! Please check your wiring.");
-            while(1)
+            while(!CCS811.available())
             {
                 delay(200);
             }
@@ -209,14 +270,18 @@ void setup(void)
     DB_Updater.attach(1, timerCallback);
 
 
-}
+    }
 
 void loop(void)
-{
-
-    if(tickOccured)
+{     
+   if(WiFi.status() != WL_CONNECTED)
     {
-
+      reconnectWifi();      
+    }
+    
+    if((tickOccured = true) && (writeflag = 1))
+    {
+        writeflag=0;
         tickOccured = false;
         if(isQualityType)
         {
@@ -243,20 +308,27 @@ void loop(void)
         temperature = Si7021.getTemp();
         if(CCS811.available())
         {
-            
             if(!CCS811.readData())
             {
+                eCO2OLD=eCO2;
+                TVOCOLD=TVOC;
                 eCO2=CCS811.geteCO2();
                 TVOC=CCS811.getTVOC();
             }
             else
             {
                 Serial.println("ERROR!");
-                while(1)
-                {
-                    delay(200);
-                }
             }
+        }
+        if(eCO2-eCO2OLD >= 20)
+        {
+          writeflag = 0; 
+          SWI(); 
+                  
+        }
+        else
+        {
+          writeflag = 1;
         }
     }
     //  current_coil = ((voltage_adc_1) * MAX_CURRENT_COIL)/MAX_VOLTAGE_ADC;
