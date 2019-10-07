@@ -27,6 +27,7 @@
 #define INDEX_LOCATION  1
 #define INDEX_ROOM      2
 #define INDEX_TYPE      3
+#define INDEX_Offset    4
 
 #define SparkFun_Si7021 Weather
 
@@ -41,13 +42,13 @@ const char* password = "getstuffdone";
 const String config[DEVICE_COUNT][TABLE_WIDTH]
 {
     //MAC Address          location          room            type
-    {"b8:77:10:c2:dd:bc", "building9",      "fusebox",      "power"     },
-    {"44:39:69:3a:7d:80", "building1",      "dummy",        "power"     },
-    {"e8:42:69:3a:7d:80", "coderbunker",    "artoffice",    "power"     },
-    {"cd:36:69:3a:7d:80", "coderbunker",    "kitchen",      "quality"   },
-    {"3d:78:10:c2:dd:bc", "coderbunker",    "artoffice",    "quality"   },
-    {"fb:61:69:3a:7d:80", "coderbunker",    "classroom",    "quality"   },
-    {"49:7a:10:c2:dd:bc", "coderbunker",    "meetingroom",  "quality"   }
+    {"b8:77:10:c2:dd:bc", "building9",      "fusebox",      "power"  },
+    {"44:39:69:3a:7d:80", "building1",      "dummy",        "power"  },
+    {"e8:42:69:3a:7d:80", "coderbunker",    "artoffice",    "power"  },
+    {"cd:36:69:3a:7d:80", "coderbunker",    "kitchen",      "quality"},
+    {"3d:78:10:c2:dd:bc", "coderbunker",    "artoffice",    "quality"},
+    {"fb:61:69:3a:7d:80", "coderbunker",    "classroom",    "quality"},
+    {"49:7a:10:c2:dd:bc", "coderbunker",    "meetingroom",  "quality"}
 };
 
 String  nameLocation = "";
@@ -76,11 +77,17 @@ InfluxDB_Data   dataAirQuality("quality_measurement");
 
 //Ticker stuff -- START -------------------------------------------------------
 Ticker  DB_Updater;
-
+int Timer=0;
 bool tickOccured = false;
 
 void timerCallback() {
+  if(Timer >= 50){
       tickOccured = true;
+      Timer=0;
+  }
+  else{
+      Timer++;
+  }
 }
 //Ticker stuff -- UDP ---------------------------------------------------------
 
@@ -115,33 +122,37 @@ float temperature = 0;
 
 float eCO2 = 0;
 float TVOC = 0;
+float eCO2OLD = 0;
+float TVOCOLD = 0;
+
+int writeflag =0;
 
 String line;
 String PowerAsString;
 
-long double Timer=0;
+
 int n=0;
 
 
 void SWI(void)
 {
-
-  if(n == 15){
-  digitalWrite(D5,LOW);
-  delay(100);
-  digitalWrite(D5,HIGH);  
-  Serial.println("Reset Sensor");
-  CCS811.begin();    
-  n=0;
-  while(n<6)
+  if(n == 3)
   {
-    delay(400);
-    n++;  
-    influxPowerPort.write(dataPower);
-    influxPowerPort.write(dataAirQuality);
+   digitalWrite(D5,LOW);
+   delay(100);
+   digitalWrite(D5,HIGH);  
+   Serial.println("Reset Sensor");
+   CCS811.begin();    
+   n=0;
+     while(n<5)
+     {
+        delay(1000);
+        n++;  
+     }
+    n=0;
   }
-  }
-  else{
+  else
+  {
     n++;  
   }
 }
@@ -262,23 +273,15 @@ void setup(void)
     }
 
 void loop(void)
-{
-
-     Timer = Timer+1;
-     if(Timer >= 80){
-      SWI();    
-      delay(100);
-      Timer=0;
-    }
-  
+{     
    if(WiFi.status() != WL_CONNECTED)
     {
       reconnectWifi();      
     }
     
-    if(tickOccured)
+    if((tickOccured = true) && (writeflag = 1))
     {
-
+        writeflag=0;
         tickOccured = false;
         if(isQualityType)
         {
@@ -307,6 +310,8 @@ void loop(void)
         {
             if(!CCS811.readData())
             {
+                eCO2OLD=eCO2;
+                TVOCOLD=TVOC;
                 eCO2=CCS811.geteCO2();
                 TVOC=CCS811.getTVOC();
             }
@@ -314,6 +319,16 @@ void loop(void)
             {
                 Serial.println("ERROR!");
             }
+        }
+        if(eCO2-eCO2OLD >= 20)
+        {
+          writeflag = 0; 
+          SWI(); 
+                  
+        }
+        else
+        {
+          writeflag = 1;
         }
     }
     //  current_coil = ((voltage_adc_1) * MAX_CURRENT_COIL)/MAX_VOLTAGE_ADC;
