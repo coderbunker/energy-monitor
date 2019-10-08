@@ -136,25 +136,17 @@ int n=0;
 
 void SWI(void)
 {
-  if(n == 3)
-  {
-   digitalWrite(D5,LOW);
+   digitalWrite(D5,LOW);                                    //Reset Sensor 
    delay(100);
    digitalWrite(D5,HIGH);  
-   Serial.println("Reset Sensor");
-   CCS811.begin();    
-   n=0;
-     while(n<5)
-     {
-        delay(1000);
-        n++;  
-     }
-    n=0;
-  }
-  else
-  {
-    n++;  
-  }
+   Serial.println("Reset Sensor"); 
+   CCS811.begin();
+   delay(5000);
+   while(eCO2 == 0.00){
+     eCO2=CCS811.geteCO2();
+     delay(100);
+   }
+  Serial.println("Sensor ready");
 }
 
 void reconnectWifi(void)
