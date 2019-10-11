@@ -19,6 +19,10 @@
 // HTTP
 #include <Bridge.h>
 #include <HttpClient.h>
+
+// JSON
+#include <ArduinoJson.h>
+
 //-----------------------------------------------------------------------------
 #define DEVICE_VERSION 0.9
 #define DEVICE_COUNT 7
@@ -43,7 +47,7 @@ const char *ssid = "Agora Space";
 const char *password = "getstuffdone";
 
 const String config[DEVICE_COUNT][TABLE_WIDTH]{
-    //MAC Address          location          room            type
+    //MAC Address         location     room       type
     {"b8:77:10:c2:dd:bc", "building9", "fusebox", "power"},
     {"44:39:69:3a:7d:80", "building1", "dummy", "power"},
     {"e8:42:69:3a:7d:80", "coderbunker", "artoffice", "power"},
@@ -59,7 +63,6 @@ String nameType = "";
 bool isPowerType;
 bool isQualityType;
 
-String getConfigValue(String mac_address, int index);
 String MacToString(const uint8_t *mac);
 
 //InfluxDB initialisation -- START --------------------------------------------
@@ -133,7 +136,19 @@ String PowerAsString;
 
 int n = 0;
 
-void SWI(void)
+class Config
+{
+    char location[] = "";
+    char room[] = "";
+    char mac[] = "";
+    char sensor_type[] = "";
+    int port = "";
+    int offset_temperature = 0;
+    int offset_humidity = 0;
+}
+
+void
+SWI(void)
 {
     writeflag = 0;
     digitalWrite(D5, LOW); //Reset Sensor
@@ -166,6 +181,38 @@ void reconnectWifi(void)
     Serial.print("reconnected");
 }
 
+Config getConfigFromPi()
+{
+    HttpClient client;
+    client.get(INFLUX_HOST + ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
+
+    char response[] = "";
+    while (client.available())
+    {
+        response[] += client.read();
+    }
+
+    StaticJsonBuffer<200> jsonBuffer;
+    JsonObject &root = jsonBuffer.parseObject(json);
+
+    if (!root.success())
+    {
+        Serial.println("parseObject() failed");
+        return nullptr;
+    }
+
+    Config config = new Config();
+    config.location = root["location"];
+    config.room = root["room"];
+    config.mac = root["mac"];
+    config.sensor_type = root["sensor_type"];
+    config.port = root["port"];
+    config.offset_temperature = root["offset_temperature"];
+    config.offset_humidity = root["offset_humidity"];
+
+    return config;
+}
+
 void setup(void)
 {
     /*-------------------Software Interupt-----------------------------------*/
@@ -189,36 +236,34 @@ void setup(void)
     Serial.println("Wifi Connected to " + String(ssid));
     // WiFi Connection -- END -------------------------------------------------
 
+    Config configFromPi = getConfigFromPi();
+
     // WiFi Mac Address Mapping -- START --------------------------------------
-    uint8_t mac[6];
-    WiFi.macAddress(mac);
-
-    String mac_address = MacToString(mac);
-
-    nameLocation = getConfigValue(mac_address, INDEX_LOCATION);
-    nameRoom = getConfigValue(mac_address, INDEX_ROOM);
+    String mac_address = configFromPi.mac;
+    nameLocation = configFromPi.location;
+    nameRoom = configFromPi.room;
 
     Serial.println("\n----- IMPORTANT INFORMATION -----");
-    Serial.println(mac_address);
-    Serial.println(nameLocation);
-    Serial.println(nameRoom);
+    Serial.println(configFromPi.mac);
+    Serial.println(configFromPi.location);
+    Serial.println(configFromPi.room);
     Serial.println("---------------------------------\n");
 
-    if (getConfigValue(mac_address, INDEX_TYPE) == "power")
+    if (config.sensor_type == "power")
     {
         isPowerType = 1;
         isQualityType = 0;
 
-        dataPower.addTag("location", nameLocation);
-        dataPower.addTag("room", nameRoom);
+        dataPower.addTag("location", configFromPi.location);
+        dataPower.addTag("room", configFromPi.room);
     }
     else
     {
         isPowerType = 0;
         isQualityType = 1;
 
-        dataAirQuality.addTag("location", nameLocation);
-        dataAirQuality.addTag("room", nameRoom);
+        dataAirQuality.addTag("location", configFromPi.location);
+        dataAirQuality.addTag("room", configFromPi.room);
     }
     // WiFi Mac Address Mapping -- END ----------------------------------------
 
@@ -389,18 +434,6 @@ double calcPower(float voltage)
     double power;
     power = voltage / BURDEN_RESISTOR * COIL_WINDING * VOLTAGE_MAINS;
     return power;
-}
-
-String getConfigValue(String mac_address, int index)
-{
-    for (int index_counter = 0; index_counter < DEVICE_COUNT; index_counter++)
-    {
-        if (config[index_counter][INDEX_MAC] == mac_address)
-        {
-            return config[index_counter][index];
-        }
-    }
-    return "";
 }
 
 String MacToString(const uint8_t *mac)
