@@ -46,20 +46,6 @@
 const char *ssid = "Agora Space";
 const char *password = "getstuffdone";
 
-const String config[DEVICE_COUNT][TABLE_WIDTH]{
-    //MAC Address         location     room       type
-    {"b8:77:10:c2:dd:bc", "building9", "fusebox", "power"},
-    {"44:39:69:3a:7d:80", "building1", "dummy", "power"},
-    {"e8:42:69:3a:7d:80", "coderbunker", "artoffice", "power"},
-    {"cd:36:69:3a:7d:80", "coderbunker", "kitchen", "quality"},
-    {"3d:78:10:c2:dd:bc", "coderbunker", "artoffice", "quality"},
-    {"fb:61:69:3a:7d:80", "coderbunker", "classroom", "quality"},
-    {"49:7a:10:c2:dd:bc", "coderbunker", "meetingroom", "quality"}};
-
-String nameLocation = "";
-String nameRoom = "";
-String nameType = "";
-
 bool isPowerType;
 bool isQualityType;
 
@@ -240,8 +226,6 @@ void setup(void)
 
     // WiFi Mac Address Mapping -- START --------------------------------------
     String mac_address = configFromPi.mac;
-    nameLocation = configFromPi.location;
-    nameRoom = configFromPi.room;
 
     Serial.println("\n----- IMPORTANT INFORMATION -----");
     Serial.println(configFromPi.mac);
