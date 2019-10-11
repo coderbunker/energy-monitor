@@ -124,17 +124,16 @@ int n = 0;
 
 class Config
 {
-    char location[] = "";
-    char room[] = "";
-    char mac[] = "";
-    char sensor_type[] = "";
-    int port = "";
+    String location = "";
+    String room = "";
+    String mac = "";
+    String sensor_type = "";
+    int port = 0;
     int offset_temperature = 0;
     int offset_humidity = 0;
-}
+};
 
-void
-SWI(void)
+void SWI(void)
 {
     writeflag = 0;
     digitalWrite(D5, LOW); //Reset Sensor
@@ -167,7 +166,7 @@ void reconnectWifi(void)
     Serial.print("reconnected");
 }
 
-Config getConfigFromPi()
+void getConfigFromPi()
 {
     HttpClient client;
     client.get(INFLUX_HOST + ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
@@ -178,7 +177,7 @@ Config getConfigFromPi()
         response[] += client.read();
     }
 
-    StaticJsonBuffer<200> jsonBuffer;
+    StaticJsonDocument<200> jsonBuffer;
     JsonObject &root = jsonBuffer.parseObject(json);
 
     if (!root.success())
