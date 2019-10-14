@@ -122,7 +122,7 @@ String PowerAsString;
 
 int n = 0;
 
-class Config
+class ArduinoConfig
 {
 public:
     String location = "";
@@ -167,7 +167,7 @@ void reconnectWifi(void)
     Serial.print("reconnected");
 }
 
-Config *getConfigFromPi()
+ArduinoConfig* getConfigFromPi()
 {
     HttpClient client;
     client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
@@ -187,16 +187,16 @@ Config *getConfigFromPi()
         return;
     }
 
-    Config *config = new Config;
-    config->location = (String) root["location"];
-    config->room = (String) root["room"];
-    config->mac = (String) root["mac"];
-    config->sensor_type = (String) root["sensor_type"];
-    config->port = root["port"];
-    config->offset_temperature = root["offset_temperature"];
-    config->offset_humidity = root["offset_humidity"];
+	ArduinoConfig* arduinoConfig = new ArduinoConfig;
+	arduinoConfig->location = (String) root["location"];
+	arduinoConfig->room = (String) root["room"];
+	arduinoConfig->mac = (String) root["mac"];
+	arduinoConfig->sensor_type = (String) root["sensor_type"];
+	arduinoConfig->port = root["port"];
+	arduinoConfig->offset_temperature = root["offset_temperature"];
+	arduinoConfig->offset_humidity = root["offset_humidity"];
 
-    return config;
+    return arduinoConfig;
 }
 
 void setup(void)
@@ -222,7 +222,7 @@ void setup(void)
     Serial.println("Wifi Connected to " + String(ssid));
     // WiFi Connection -- END -------------------------------------------------
 
-    Config *configFromPi = getConfigFromPi();
+	ArduinoConfig* configFromPi = getConfigFromPi();
 
     // WiFi Mac Address Mapping -- START --------------------------------------
     String mac_address = configFromPi->mac;
