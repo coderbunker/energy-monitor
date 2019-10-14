@@ -172,7 +172,12 @@ void reconnectWifi(void)
 void getConfigFromPi()
 {
     HttpClient client;
-    client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
+
+    uint8_t mac[6];
+    WiFi.macAddress(mac);
+    String mac_address = MacToString(mac);
+
+    client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + mac_address);
 
     String response = "";
     while (client.available())
