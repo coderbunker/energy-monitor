@@ -134,7 +134,7 @@ public:
     int offset_humidity = 0;
 };
 
-ArduinoConfig arduinoConfig;
+ArduinoConfig *arduinoConfig;
 
 void SWI(void)
 {
@@ -185,23 +185,23 @@ void getConfigFromPi()
         response = response + client.read();
     }
 
-    StaticJsonDocument<200> jsonBuffer;
-    JsonObject &root = jsonBuffer.parseObject(json);
+    StaticJsonDocument<256> jsonDoc;
+    DeserializationError parseError = deserializeJson(jsonDoc, response);
 
-    if (!root.success())
+    if (parseError)
     {
         Serial.println("parseObject() failed");
         return;
     }
 
     arduinoConfig = new ArduinoConfig;
-    arduinoConfig->location = (String)root["location"];
-    arduinoConfig->room = (String)root["room"];
-    arduinoConfig->mac = (String)root["mac"];
-    arduinoConfig->sensor_type = (String)root["sensor_type"];
-    arduinoConfig->port = root["port"];
-    arduinoConfig->offset_temperature = root["offset_temperature"];
-    arduinoConfig->offset_humidity = root["offset_humidity"];
+    arduinoConfig->location = jsonDoc["location"].as<String>();
+    arduinoConfig->room = jsonDoc["room"].as<String>();
+    arduinoConfig->mac = jsonDoc["mac"].as<String>();
+    arduinoConfig->sensor_type = jsonDoc["sensor_type"].as<String>();
+    arduinoConfig->port = jsonDoc["port"];
+    arduinoConfig->offset_temperature = jsonDoc["offset_temperature"];
+    arduinoConfig->offset_humidity = jsonDoc["offset_humidity"];
 }
 
 void setup(void)
@@ -235,7 +235,7 @@ void setup(void)
     Serial.println("\n----- IMPORTANT INFORMATION -----");
     Serial.println(arduinoConfig->mac);
     Serial.println(arduinoConfig->location);
-    Serial.println(confiarduinoConfiggFromPi->room);
+    Serial.println(arduinoConfig->room);
     Serial.println("---------------------------------\n");
 
     if (arduinoConfig->sensor_type == "power")
