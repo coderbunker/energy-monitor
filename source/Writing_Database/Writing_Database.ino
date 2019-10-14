@@ -171,21 +171,12 @@ void reconnectWifi(void)
 
 void getConfigFromPi()
 {
-    Serial.println("174");
-
     WiFiClient client;
     const int httpPort = 5000;
-
-    Serial.println("177");
 
     if (!client.connect(INFLUX_HOST, httpPort))
     {
         Serial.println("connection failed");
-        return;
-    }
-    else
-    {
-        Serial.println("connected");
         return;
     }
 
@@ -193,19 +184,25 @@ void getConfigFromPi()
     WiFi.macAddress(mac);
     String mac_address = MacToString(mac);
 
-    Serial.println("182");
+    String url = "/api/v1.0/config/" + mac_address;
 
-    httpClient.print(String("GET ") + "/api/v1.0/config/" + mac_address + " HTTP/1.1\r\n" +
-                     "Host: " + INFLUX_HOST + ":5000" + "\r\n" +
-                     "Connection: close\r\n\r\n");
+    Serial.println("Url: " + url);
+
+    client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+                 "Host: " + INFLUX_HOST + "\r\n" +
+                 "Connection: close\r\n\r\n");
+    delay(10);
 
     Serial.println("185");
 
     String response = "";
-    while (httpClient.connected())
+
+    Serial.println("Respond:");
+    while (client.available())
     {
-        response = httpClient.read();
-        Serial.println("Response: " + response);
+        String line = client.readStringUntil('\r');
+        response = response + line;
+        Serial.print(line);
     }
 
     Serial.println("192");
