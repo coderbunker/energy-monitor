@@ -171,19 +171,25 @@ void reconnectWifi(void)
 
 void getConfigFromPi()
 {
+    Serial.println("174");
     HttpClient client;
 
+    Serial.println("177");
     uint8_t mac[6];
     WiFi.macAddress(mac);
     String mac_address = MacToString(mac);
 
+    Serial.println("182");
     client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + mac_address);
 
+    Serial.println("185");
     String response = "";
     while (client.available())
     {
         response = response + client.read();
     }
+
+    Serial.println("192");
 
     StaticJsonDocument<256> jsonDoc;
     DeserializationError parseError = deserializeJson(jsonDoc, response);
@@ -194,6 +200,7 @@ void getConfigFromPi()
         return;
     }
 
+    Serial.println("203");
     arduinoConfig = new ArduinoConfig;
     arduinoConfig->location = jsonDoc["location"].as<String>();
     arduinoConfig->room = jsonDoc["room"].as<String>();
@@ -206,6 +213,7 @@ void getConfigFromPi()
 
 void setup(void)
 {
+    Serial.println("Start :D");
     /*-------------------Software Interupt-----------------------------------*/
     pinMode(D5, OUTPUT);
     digitalWrite(D5, HIGH);
@@ -228,7 +236,7 @@ void setup(void)
     // WiFi Connection -- END -------------------------------------------------
 
     getConfigFromPi();
-
+    Serial.println("239");
     // WiFi Mac Address Mapping -- START --------------------------------------
     String mac_address = arduinoConfig->mac;
 
