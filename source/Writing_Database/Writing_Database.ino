@@ -172,25 +172,41 @@ void reconnectWifi(void)
 void getConfigFromPi()
 {
     Serial.println("174");
-    HttpClient client;
+
+    WiFiClient client;
+    const int httpPort = 5000;
 
     Serial.println("177");
+
+    if (!client.connect(INFLUX_HOST, httpPort))
+    {
+        Serial.println("connection failed");
+        return;
+    }
+    else
+    {
+        Serial.println("connected");
+        return;
+    }
+
     uint8_t mac[6];
     WiFi.macAddress(mac);
     String mac_address = MacToString(mac);
 
     Serial.println("182");
-    client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + mac_address);
+
+    httpClient.print(String("GET ") + "/api/v1.0/config/" + mac_address + " HTTP/1.1\r\n" +
+                     "Host: " + INFLUX_HOST + ":5000" + "\r\n" +
+                     "Connection: close\r\n\r\n");
 
     Serial.println("185");
-    String response = "";
-    while (!client.available())
-    {
-        Serial.println("Waiting for response");
-        delay(100);
-    }
 
-    response = client.read();
+    String response = "";
+    while (httpClient.connected())
+    {
+        response = httpClient.read();
+        Serial.println("Response: " + response);
+    }
 
     Serial.println("192");
 
@@ -224,7 +240,6 @@ void setup(void)
     //---------------------------Wifihotspo--from--ESP--disable---------------
     WiFi.softAPdisconnect(true);
     Wire.setClock(400000);
-    Bridge.begin();
     Serial.begin(115200);
     delay(1000);
 
