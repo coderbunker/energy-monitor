@@ -131,8 +131,10 @@ public:
     String sensor_type = "";
     int port = 0;
     int offset_temperature = 0;
-	int offset_humidity = 0;
+    int offset_humidity = 0;
 };
+
+ArduinoConfig arduinoConfig;
 
 void SWI(void)
 {
@@ -167,7 +169,7 @@ void reconnectWifi(void)
     Serial.print("reconnected");
 }
 
-ArduinoConfig* getConfigFromPi()
+void getConfigFromPi()
 {
     HttpClient client;
     client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
@@ -187,16 +189,14 @@ ArduinoConfig* getConfigFromPi()
         return;
     }
 
-	ArduinoConfig* arduinoConfig = new ArduinoConfig;
-	arduinoConfig->location = (String) root["location"];
-	arduinoConfig->room = (String) root["room"];
-	arduinoConfig->mac = (String) root["mac"];
-	arduinoConfig->sensor_type = (String) root["sensor_type"];
-	arduinoConfig->port = root["port"];
-	arduinoConfig->offset_temperature = root["offset_temperature"];
-	arduinoConfig->offset_humidity = root["offset_humidity"];
-
-    return arduinoConfig;
+    arduinoConfig = new ArduinoConfig;
+    arduinoConfig->location = (String)root["location"];
+    arduinoConfig->room = (String)root["room"];
+    arduinoConfig->mac = (String)root["mac"];
+    arduinoConfig->sensor_type = (String)root["sensor_type"];
+    arduinoConfig->port = root["port"];
+    arduinoConfig->offset_temperature = root["offset_temperature"];
+    arduinoConfig->offset_humidity = root["offset_humidity"];
 }
 
 void setup(void)
@@ -222,32 +222,32 @@ void setup(void)
     Serial.println("Wifi Connected to " + String(ssid));
     // WiFi Connection -- END -------------------------------------------------
 
-	ArduinoConfig* configFromPi = getConfigFromPi();
+    getConfigFromPi();
 
     // WiFi Mac Address Mapping -- START --------------------------------------
-    String mac_address = configFromPi->mac;
+    String mac_address = arduinoConfig->mac;
 
     Serial.println("\n----- IMPORTANT INFORMATION -----");
-    Serial.println(configFromPi->mac);
-    Serial.println(configFromPi->location);
-    Serial.println(configFromPi->room);
+    Serial.println(arduinoConfig->mac);
+    Serial.println(arduinoConfig->location);
+    Serial.println(confiarduinoConfiggFromPi->room);
     Serial.println("---------------------------------\n");
 
-    if (configFromPi->sensor_type == "power")
+    if (arduinoConfig->sensor_type == "power")
     {
         isPowerType = 1;
         isQualityType = 0;
 
-        dataPower.addTag("location", configFromPi->location);
-        dataPower.addTag("room", configFromPi->room);
+        dataPower.addTag("location", arduinoConfig->location);
+        dataPower.addTag("room", arduinoConfig->room);
     }
     else
     {
         isPowerType = 0;
         isQualityType = 1;
 
-        dataAirQuality.addTag("location", configFromPi->location);
-        dataAirQuality.addTag("room", configFromPi->room);
+        dataAirQuality.addTag("location", arduinoConfig->location);
+        dataAirQuality.addTag("room", arduinoConfig->room);
     }
     // WiFi Mac Address Mapping -- END ----------------------------------------
 
