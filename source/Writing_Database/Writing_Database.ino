@@ -197,12 +197,11 @@ void getConfigFromPi()
 
     String response = "";
 
-    Serial.println("Respond:");
     while (client.available())
     {
-        String line = client.readStringUntil('\r');
+        String line = client.readString();
         response = response + line;
-        Serial.print(line);
+        Serial.print("Response: " + line);
     }
 
     Serial.println("192");
