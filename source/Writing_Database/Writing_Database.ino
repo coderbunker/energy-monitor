@@ -39,7 +39,7 @@
 #define SparkFun_Si7021 Weather
 
 //WiFi Information -- START ---------------------------------------------------
-#define INFLUX_HOST "10.1.0.230"
+#define INFLUX_HOST "10.1.0.146"
 #define INFLUX_PORT_POWER 6969
 #define INFLUX_PORT_QUALITY 6970
 
