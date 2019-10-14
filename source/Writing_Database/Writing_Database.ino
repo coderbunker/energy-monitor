@@ -124,13 +124,14 @@ int n = 0;
 
 class Config
 {
+public:
     String location = "";
     String room = "";
     String mac = "";
     String sensor_type = "";
     int port = 0;
     int offset_temperature = 0;
-    int offset_humidity = 0;
+	int offset_humidity = 0;
 };
 
 void SWI(void)
@@ -166,15 +167,15 @@ void reconnectWifi(void)
     Serial.print("reconnected");
 }
 
-void getConfigFromPi()
+Config *getConfigFromPi()
 {
     HttpClient client;
-    client.get(INFLUX_HOST + ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
+    client.get(INFLUX_HOST + (String) ":5000/api/v1.0/config/" + MacToString(WiFi.macAddress()));
 
-    char response[] = "";
+    String response = "";
     while (client.available())
     {
-        response[] += client.read();
+        response = response + client.read();
     }
 
     StaticJsonDocument<200> jsonBuffer;
@@ -183,17 +184,17 @@ void getConfigFromPi()
     if (!root.success())
     {
         Serial.println("parseObject() failed");
-        return nullptr;
+        return;
     }
 
-    Config config = new Config();
-    config.location = root["location"];
-    config.room = root["room"];
-    config.mac = root["mac"];
-    config.sensor_type = root["sensor_type"];
-    config.port = root["port"];
-    config.offset_temperature = root["offset_temperature"];
-    config.offset_humidity = root["offset_humidity"];
+    Config *config = new Config;
+    config->location = (String) root["location"];
+    config->room = (String) root["room"];
+    config->mac = (String) root["mac"];
+    config->sensor_type = (String) root["sensor_type"];
+    config->port = root["port"];
+    config->offset_temperature = root["offset_temperature"];
+    config->offset_humidity = root["offset_humidity"];
 
     return config;
 }
@@ -221,32 +222,32 @@ void setup(void)
     Serial.println("Wifi Connected to " + String(ssid));
     // WiFi Connection -- END -------------------------------------------------
 
-    Config configFromPi = getConfigFromPi();
+    Config *configFromPi = getConfigFromPi();
 
     // WiFi Mac Address Mapping -- START --------------------------------------
-    String mac_address = configFromPi.mac;
+    String mac_address = configFromPi->mac;
 
     Serial.println("\n----- IMPORTANT INFORMATION -----");
-    Serial.println(configFromPi.mac);
-    Serial.println(configFromPi.location);
-    Serial.println(configFromPi.room);
+    Serial.println(configFromPi->mac);
+    Serial.println(configFromPi->location);
+    Serial.println(configFromPi->room);
     Serial.println("---------------------------------\n");
 
-    if (config.sensor_type == "power")
+    if (configFromPi->sensor_type == "power")
     {
         isPowerType = 1;
         isQualityType = 0;
 
-        dataPower.addTag("location", configFromPi.location);
-        dataPower.addTag("room", configFromPi.room);
+        dataPower.addTag("location", configFromPi->location);
+        dataPower.addTag("room", configFromPi->room);
     }
     else
     {
         isPowerType = 0;
         isQualityType = 1;
 
-        dataAirQuality.addTag("location", configFromPi.location);
-        dataAirQuality.addTag("room", configFromPi.room);
+        dataAirQuality.addTag("location", configFromPi->location);
+        dataAirQuality.addTag("room", configFromPi->room);
     }
     // WiFi Mac Address Mapping -- END ----------------------------------------
 
