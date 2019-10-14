@@ -186,7 +186,8 @@ void getConfigFromPi()
     String response = "";
     while (!client.available())
     {
-        Serial.println("Waiting for response")
+        Serial.println("Waiting for response");
+        delay(100);
     }
 
     response = client.read();
@@ -223,6 +224,7 @@ void setup(void)
     //---------------------------Wifihotspo--from--ESP--disable---------------
     WiFi.softAPdisconnect(true);
     Wire.setClock(400000);
+    Bridge.begin();
     Serial.begin(115200);
     delay(1000);
 
