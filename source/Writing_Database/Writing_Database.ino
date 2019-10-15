@@ -191,31 +191,31 @@ void getConfigFromPi()
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                  "Host: " + INFLUX_HOST + "\r\n" +
                  "Connection: close\r\n\r\n");
-    delay(10);
+    delay(100);
 
-    Serial.println("185");
-
-    String response = "";
-
+    String respond = "";
     while (client.available())
     {
-        String line = client.readString();
-        response = response + line;
-        Serial.print("Response: " + line);
+        String line = client.readStringUntil('\r');
+        respond = respond + line;
     }
 
-    Serial.println("192");
+    int i = respond.indexOf('{');
+    String json = respond.substring(i);
 
-    StaticJsonDocument<256> jsonDoc;
-    DeserializationError parseError = deserializeJson(jsonDoc, response);
+    Serial.println("JSON: ");
+    Serial.println(json);
+
+    StaticJsonDocument<1024> jsonDoc;
+    auto parseError = deserializeJson(jsonDoc, json.c_str());
 
     if (parseError)
     {
-        Serial.println("parseObject() failed");
+        Serial.println("parseObject() failed: ");
+        Serial.println(parseError.c_str());
         return;
     }
 
-    Serial.println("203");
     arduinoConfig = new ArduinoConfig;
     arduinoConfig->location = jsonDoc["location"].as<String>();
     arduinoConfig->room = jsonDoc["room"].as<String>();
@@ -228,7 +228,6 @@ void getConfigFromPi()
 
 void setup(void)
 {
-    Serial.println("Start :D");
     /*-------------------Software Interupt-----------------------------------*/
     pinMode(D5, OUTPUT);
     digitalWrite(D5, HIGH);
@@ -251,7 +250,6 @@ void setup(void)
     // WiFi Connection -- END -------------------------------------------------
 
     getConfigFromPi();
-    Serial.println("239");
     // WiFi Mac Address Mapping -- START --------------------------------------
     String mac_address = arduinoConfig->mac;
 
