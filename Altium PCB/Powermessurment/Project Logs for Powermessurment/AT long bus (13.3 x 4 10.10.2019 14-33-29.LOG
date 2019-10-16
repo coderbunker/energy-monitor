@@ -1,0 +1,6 @@
+Added Component: Designator=IC4(ADS1115)
+Add component. Clean all parameters for all variants
+Added Component: Designator=IC5(ADS1115)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC4 ADS1115
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC5 ADS1115

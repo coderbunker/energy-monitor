@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: AT long bus (13.3 x 4.2 inches).GBR   11.10.2019  12:41:18
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTO                TopOverlay                              
+.GTP                TopPaste                                
+.GTS                TopSolder                               
+.GTL                TopLayer                                
+.GBL                BottomLayer                             
+.GBS                BottomSolder                            
+.GBP                BottomPaste                             
+.GBO                BottomOverlay                           
+.GM1                Mechanical1                             
+.GM13               Mechanical13                            
+.GM15               Mechanical15                            
+.GKO                KeepOutLayer                            
+.GPT                Top Pad Master                          
+.GPB                Bottom Pad Master                       
+------------------------------------------------------------------------------------------

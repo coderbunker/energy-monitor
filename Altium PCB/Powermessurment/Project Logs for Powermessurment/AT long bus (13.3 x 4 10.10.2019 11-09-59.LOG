@@ -1,0 +1,20 @@
+Added Component: Designator=IC1(CCS811)
+Add component. Clean all parameters for all variants
+Added Component: Designator=IC2(ESP8266)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetIC1_1 Pin=IC1-1
+Added Pin To Net: NetName=NetIC1_2 Pin=IC1-2
+Added Pin To Net: NetName=NetIC1_3 Pin=IC1-3
+Added Pin To Net: NetName=NetIC1_4 Pin=IC1-4
+Added Pin To Net: NetName=NetIC1_2 Pin=IC1-5
+Added Pin To Net: NetName=NetIC1_7 Pin=IC1-7
+Added Pin To Net: NetName=NetIC1_2 Pin=IC2-10
+Added Pin To Net: NetName=NetIC1_2 Pin=IC2-15
+Added Pin To Net: NetName=NetIC1_1 Pin=IC2-16
+Added Pin To Net: NetName=NetIC1_2 Pin=IC2-17
+Added Pin To Net: NetName=NetIC1_7 Pin=IC2-23
+Added Pin To Net: NetName=NetIC1_2 Pin=IC2-24
+Added Pin To Net: NetName=NetIC1_4 Pin=IC2-28
+Added Pin To Net: NetName=NetIC1_3 Pin=IC2-29
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC1 CCS811
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC2 ESP8266

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=D1-2
+Removed Pin From Net: NetName=GND Pin=D2-2
+Removed Member From Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=D1
+Removed Member From Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=D2
+Removed Member From Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=R1
+Removed Member From Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=R2

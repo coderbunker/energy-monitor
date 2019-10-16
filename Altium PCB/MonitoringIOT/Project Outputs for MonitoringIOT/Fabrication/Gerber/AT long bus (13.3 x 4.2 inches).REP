@@ -1,0 +1,184 @@
+*************************************************************
+FileName = AT long bus (13.3 x 4.2 inches).GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical13
+      File : AT long bus (13.3 x 4.2 inches).GM13
+
+    Adding Layer      : Mechanical13
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : BottomOverlay
+      File : AT long bus (13.3 x 4.2 inches).GBO
+
+    Adding Layer      : BottomOverlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : TopPaste
+      File : AT long bus (13.3 x 4.2 inches).GTP
+
+    Adding Layer      : TopPaste
+
+    Adding Layer      : TopLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : AT long bus (13.3 x 4.2 inches).GPB
+
+    Adding Layer      : BottomLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical1
+      File : AT long bus (13.3 x 4.2 inches).GM1
+
+    Adding Layer      : Mechanical1
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : TopSolder
+      File : AT long bus (13.3 x 4.2 inches).GTS
+
+    Adding Layer      : TopSolder
+
+    Adding Layer      : TopLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : BottomLayer
+      File : AT long bus (13.3 x 4.2 inches).GBL
+
+    Adding Layer      : BottomLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+    D13
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : KeepOutLayer
+      File : AT long bus (13.3 x 4.2 inches).GKO
+
+    Adding Layer      : KeepOutLayer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : BottomSolder
+      File : AT long bus (13.3 x 4.2 inches).GBS
+
+    Adding Layer      : BottomSolder
+
+    Adding Layer      : BottomLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : AT long bus (13.3 x 4.2 inches).GPT
+
+    Adding Layer      : TopLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical15
+      File : AT long bus (13.3 x 4.2 inches).GM15
+
+    Adding Layer      : Mechanical15
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : BottomPaste
+      File : AT long bus (13.3 x 4.2 inches).GBP
+
+    Adding Layer      : BottomPaste
+
+    Adding Layer      : BottomLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : TopOverlay
+      File : AT long bus (13.3 x 4.2 inches).GTO
+
+    Adding Layer      : TopOverlay
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : TopLayer
+      File : AT long bus (13.3 x 4.2 inches).GTL
+
+    Adding Layer      : TopLayer
+
+    Adding Layer      : MultiLayer
+
+
+Used DCodes :
+    D13
+    D14
+    D15
+    D16
+*************************************************************
+
