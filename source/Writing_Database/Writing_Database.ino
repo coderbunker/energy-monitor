@@ -39,9 +39,7 @@
 #define SparkFun_Si7021 Weather
 
 //WiFi Information -- START ---------------------------------------------------
-#define INFLUX_HOST "10.1.0.146"
-#define INFLUX_PORT_POWER 6969
-#define INFLUX_PORT_QUALITY 6970
+const char *config_host = "10.1.0.146";
 
 const char *ssid = "Agora Space";
 const char *password = "getstuffdone";
@@ -53,10 +51,6 @@ String MacToString(const uint8_t *mac);
 
 //InfluxDB initialisation -- START --------------------------------------------
 WiFiUDP udp;
-
-InfluxDB_UDP influxPowerPort(udp, INFLUX_HOST, INFLUX_PORT_POWER);
-
-InfluxDB_UDP influxSensorPort(udp, INFLUX_HOST, INFLUX_PORT_QUALITY);
 
 InfluxDB_Data dataPower("power_measurement");
 InfluxDB_Data dataAirQuality("quality_measurement");
@@ -126,10 +120,12 @@ class ArduinoConfig
 {
 public:
     String location = "";
+    String influx_bd_host = "";
     String room = "";
     String mac = "";
     String sensor_type = "";
-    int port = 0;
+    int quality_port = 0;
+    int power_port = 0;
     int offset_temperature = 0;
     int offset_humidity = 0;
 };
@@ -174,7 +170,7 @@ void getConfigFromPi()
     WiFiClient client;
     const int httpPort = 5000;
 
-    if (!client.connect(INFLUX_HOST, httpPort))
+    if (!client.connect(config_host, httpPort))
     {
         Serial.println("connection failed");
         return;
@@ -189,7 +185,7 @@ void getConfigFromPi()
     Serial.println("Url: " + url);
 
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-                 "Host: " + INFLUX_HOST + "\r\n" +
+                 "Host: " + config_host + "\r\n" +
                  "Connection: close\r\n\r\n");
     delay(100);
 
@@ -218,10 +214,12 @@ void getConfigFromPi()
 
     arduinoConfig = new ArduinoConfig;
     arduinoConfig->location = jsonDoc["location"].as<String>();
+    arduinoConfig->influx_bd_host = jsonDoc["influx_bd_host"].as<String>();
     arduinoConfig->room = jsonDoc["room"].as<String>();
     arduinoConfig->mac = jsonDoc["mac"].as<String>();
     arduinoConfig->sensor_type = jsonDoc["sensor_type"].as<String>();
-    arduinoConfig->port = jsonDoc["port"];
+    arduinoConfig->quality_port = jsonDoc["quality_port"];
+    arduinoConfig->power_port = jsonDoc["power_port"];
     arduinoConfig->offset_temperature = jsonDoc["offset_temperature"];
     arduinoConfig->offset_humidity = jsonDoc["offset_humidity"];
 }
@@ -250,6 +248,7 @@ void setup(void)
     // WiFi Connection -- END -------------------------------------------------
 
     getConfigFromPi();
+
     // WiFi Mac Address Mapping -- START --------------------------------------
     String mac_address = arduinoConfig->mac;
 
@@ -331,13 +330,17 @@ void loop(void)
     {
         writeflag = 0;
         tickOccured = false;
+
+        InfluxDB_UDP influxPowerPort(udp, arduinoConfig->influx_bd_host, arduinoConfig->power_port);
+        InfluxDB_UDP influxSensorPort(udp, arduinoConfig->influx_bd_host, arduinoConfig->quality_port);
+
         if (isQualityType)
         {
             dataAirQuality.clear(InfluxDB_Data::FIELD);
-            dataAirQuality.addField("temperature_c", String(temperature));
+            dataAirQuality.addField("temperature_c", String(temperature + arduinoConfig->offset_temperature));
             dataAirQuality.addField("TVOC_ppb", String(TVOC));
             dataAirQuality.addField("eCO2_ppm", String(eCO2));
-            dataAirQuality.addField("humidity_RH", String(humidity));
+            dataAirQuality.addField("humidity_RH", String(humidity + arduinoConfig->offset_humidity));
             influxSensorPort.write(dataAirQuality);
         }
 
