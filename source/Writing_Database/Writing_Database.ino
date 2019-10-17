@@ -63,10 +63,11 @@ bool tickOccured = false;
 
 void timerCallback()
 {
+    tickOccured = true;
     if (Timer >= 50)
     {
-        tickOccured = true;
         Timer = 0;
+        getConfigFromPi();
     }
     else
     {
@@ -379,7 +380,7 @@ void loop(void)
                 Serial.println("ERROR!");
             }
         }
-        if (eCO2 - eCO2OLD >= 20)
+        if (eCO2 - eCO2OLD >= 50)
         {
             writeflag = 0;
             SWI();
