@@ -323,7 +323,7 @@ void loop(void)
         Serial.println("ERROR!");
       }
     }
-    if (eCO2 - eCO2OLD >= 100)
+    if (eCO2 - eCO2OLD >= 500)
     {
       SWI();
     }
@@ -363,7 +363,7 @@ double calcVrms(unsigned int Samples, unsigned int phase)
           break;
         }
       case 2: {
-          sample_voltage = ADC_1.readADC_Differential_2_3();
+          sample_voltage = ADC_2.readADC_Differential_2_3();
           break;
         }
       case 3: {
