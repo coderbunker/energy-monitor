@@ -38,8 +38,11 @@
 
 #define SparkFun_Si7021 Weather
 
+//SHA1 finger print of certificate use web browser to view and copy
+const char fingerprint[] PROGMEM = "11e76ce84e2d03e19a9a65f925e0d9b15bc1e76c";
+
 //WiFi Information -- START ---------------------------------------------------
-const char *config_host = "10.1.0.146";
+String config_host = "chronograf01.monitor.agora-space.com";
 
 const char *ssid = "Agora Space";
 const char *password = "getstuffdone";
@@ -168,34 +171,74 @@ void reconnectWifi(void)
 
 void getConfigFromPi()
 {
-    WiFiClient client;
-    const int httpPort = 5000;
+    WiFiClientSecure httpsClient; //Declare object of class WiFiClient
 
-    if (!client.connect(config_host, httpPort))
+    Serial.println(config_host);
+
+    Serial.printf("Using fingerprint '%s'\n", fingerprint);
+    httpsClient.setFingerprint(fingerprint);
+    httpsClient.setTimeout(15000); // 15 Seconds
+    delay(1000);
+
+    Serial.print("HTTPS Connecting");
+    int r = 0; //retry counter
+    while ((!httpsClient.connect(config_host, 443)) && (r < 30))
     {
-        Serial.println("connection failed");
-        return;
+        delay(100);
+        Serial.print(".");
+        r++;
+    }
+    if (r == 30)
+    {
+        Serial.println("Connection failed");
+    }
+    else
+    {
+        Serial.println("Connected to web");
     }
 
+    String ADCData, getData, Link;
+    int adcvalue = analogRead(A0); //Read Analog value of LDR
+    ADCData = String(adcvalue);    //String to interger conversion
+
+    //GET Data
     uint8_t mac[6];
     WiFi.macAddress(mac);
     String mac_address = MacToString(mac);
+    Link = "/api/v1.0/config/" + mac_address;
 
-    String url = "/api/v1.0/config/" + mac_address;
+    Serial.print("requesting URL: ");
+    Serial.println(config_host + Link);
 
-    Serial.println("Url: " + url);
+    httpsClient.print(String("GET ") + Link + " HTTP/1.1\r\n" +
+                      "Host: " + config_host + "\r\n" +
+                      "Connection: close\r\n\r\n");
 
-    client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-                 "Host: " + config_host + "\r\n" +
-                 "Connection: close\r\n\r\n");
-    delay(100);
+    Serial.println("request sent");
 
     String respond = "";
-    while (client.available())
+
+    while (httpsClient.connected())
     {
-        String line = client.readStringUntil('\r');
-        respond = respond + line;
+        String line = httpsClient.readStringUntil('\n');
+        if (line == "\r")
+        {
+            Serial.println("headers received");
+            break;
+        }
     }
+
+    Serial.println("reply was:");
+    Serial.println("==========");
+    String line;
+    while (httpsClient.available())
+    {
+        line = httpsClient.readStringUntil('\n'); //Read Line by Line
+        Serial.println(line);
+        respond = respond + line; //Print response
+    }
+    Serial.println("==========");
+    Serial.println("closing connection");
 
     int i = respond.indexOf('{');
     String json = respond.substring(i);
@@ -424,7 +467,7 @@ double calcVrms(unsigned int Samples, unsigned int phase)
         }
         case 2:
         {
-            sample_voltage = ADC_1.readADC_Differential_2_3();
+            sample_voltage = ADC_2.readADC_Differential_2_3();
             break;
         }
         case 3:
