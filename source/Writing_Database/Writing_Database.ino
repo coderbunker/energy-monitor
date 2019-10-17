@@ -124,7 +124,6 @@ float eCO2 = 0;
 float TVOC = 0;
 float eCO2OLD = 0;
 float TVOCOLD = 0;
-float LongRST=0;
 
 int writeflag =0;
 
@@ -137,7 +136,6 @@ int n=0;
 
 void SWI(void)
 {
-   writeflag=0;
    digitalWrite(D5,LOW);                                    //Reset Sensor 
    delay(100);
    digitalWrite(D5,HIGH);  
@@ -150,7 +148,6 @@ void SWI(void)
    }
   Serial.println("Sensor ready");
 }
-
 
 void reconnectWifi(void)
 {
@@ -266,15 +263,15 @@ void setup(void)
 
 
     }
-    
+
 void loop(void)
-{   
+{     
    if(WiFi.status() != WL_CONNECTED)
     {
       reconnectWifi();      
     }
     
-    if((tickOccured == true) && (writeflag == 1))
+    if((tickOccured = true) && (writeflag = 1))
     {
         writeflag=0;
         tickOccured = false;
@@ -299,13 +296,6 @@ void loop(void)
     }
     if(isQualityType)
     {
-        LongRST++;
-        delay(100);
-        if(LongRST >=12000)
-        {
-            LongRST=0;
-            SWI();
-        }
         humidity = Si7021.getRH();
         temperature = Si7021.getTemp();
         if(CCS811.available())
@@ -324,7 +314,9 @@ void loop(void)
         }
         if(eCO2-eCO2OLD >= 20)
         {
-          SWI();      
+          writeflag = 0; 
+          SWI(); 
+                  
         }
         else
         {
