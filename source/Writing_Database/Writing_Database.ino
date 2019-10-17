@@ -381,6 +381,7 @@ void loop(void)
         }
         if (eCO2 - eCO2OLD >= 20)
         {
+            writeflag = 0;
             SWI();
         }
         else
