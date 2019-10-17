@@ -1,0 +1,16 @@
+Altium Designer Pick and Place Locations
+C:\Users\Lsso\AppData\Local\TempReleases\Snapshot\1\Assembly\Pick Place\Pick Place for AT long bus (13.3 x 4.2 inches).txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       16.10.19
+Time:       10:54
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Center-X(mil) Center-Y(mil) Comment Description Designator Footprint Layer    Rotation 
+680.500       2331.260      ESP8266 ""          IC2        ESP8266   TopLayer 0        
+1424.500      2150.260      CCS811  ""          IC1        CCS811    TopLayer 270      
+1419.500      2860.260      si7021  ""          IC3        IS7021    TopLayer 270      

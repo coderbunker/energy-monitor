@@ -1,0 +1,66 @@
+Removed Pin From Net: NetName=GND Pin=IC2-15
+Removed Pin From Net: NetName=GND Pin=IC2-17
+Removed Pin From Net: NetName=NetIC1_7 Pin=IC2-23
+Removed Pin From Net: NetName=GND Pin=IC2-24
+Added Component: Designator=IC1(ADS1115)
+Add component. Clean all parameters for all variants
+Added Component: Designator=IC3(ADS1115)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J1(3,5mm Jack)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J2(3,5mm Jack)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J3(3,5mm Jack)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R3(220E)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R4(220E)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R5(220E)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetIC1_1 Pin=IC1-1
+Added Pin To Net: NetName=NetIC1_3 Pin=IC1-3
+Added Pin To Net: NetName=NetIC1_4 Pin=IC1-4
+Added Pin To Net: NetName=NetIC1_7 Pin=IC1-7
+Added Pin To Net: NetName=GND Pin=IC2-14
+Added Pin To Net: NetName=NetIC1_1 Pin=IC3-1
+Added Pin To Net: NetName=NetIC1_3 Pin=IC3-3
+Added Pin To Net: NetName=NetIC1_4 Pin=IC3-4
+Added Pin To Net: NetName=NetIC1_1 Pin=IC3-5
+Added Pin To Net: NetName=NetIC1_7 Pin=J1-2
+Added Pin To Net: NetName=NetIC1_7 Pin=R3-2
+Added Pin To Net: NetName=NetIC1_2 Pin=IC1-2
+Added Pin To Net: NetName=NetIC1_2 Pin=IC1-5
+Added Pin To Net: NetName=NetIC1_2 Pin=IC2-17
+Added Pin To Net: NetName=NetIC1_2 Pin=IC2-24
+Added Pin To Net: NetName=NetIC1_2 Pin=IC3-2
+Added Net: Name=NetIC1_2
+Added Pin To Net: NetName=NetIC1_8 Pin=IC1-8
+Added Pin To Net: NetName=NetIC1_8 Pin=J1-1
+Added Pin To Net: NetName=NetIC1_8 Pin=R3-1
+Added Net: Name=NetIC1_8
+Added Pin To Net: NetName=NetIC1_9 Pin=IC1-9
+Added Pin To Net: NetName=NetIC1_9 Pin=J2-2
+Added Pin To Net: NetName=NetIC1_9 Pin=R4-2
+Added Net: Name=NetIC1_9
+Added Pin To Net: NetName=NetIC1_10 Pin=IC1-10
+Added Pin To Net: NetName=NetIC1_10 Pin=J2-1
+Added Pin To Net: NetName=NetIC1_10 Pin=R4-1
+Added Net: Name=NetIC1_10
+Added Pin To Net: NetName=NetIC3_7 Pin=IC3-7
+Added Pin To Net: NetName=NetIC3_7 Pin=J3-2
+Added Pin To Net: NetName=NetIC3_7 Pin=R5-2
+Added Net: Name=NetIC3_7
+Added Pin To Net: NetName=NetIC3_8 Pin=IC3-8
+Added Pin To Net: NetName=NetIC3_8 Pin=J3-1
+Added Pin To Net: NetName=NetIC3_8 Pin=R5-1
+Added Net: Name=NetIC3_8
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC1 ADS1115
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC3 ADS1115
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component J1 si7021
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component J2 si7021
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component J3 si7021
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component R3 220E
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component R4 220E
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component R5 220E
+Added Room: Name=AT long bus (13.3 x 4.2 inches)

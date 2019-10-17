@@ -1,0 +1,2987 @@
+<?xml version="1.0"?>
+<IPC-2581 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="B" xmlns="http://webstds.ipc.org/2581">
+  <Content roleRef="Owner">
+    <FunctionMode mode="USERDEF" level="1" />
+    <StepRef name="AT long bus (13.3 x 4.2 inches)" />
+    <LayerRef name="TopPaste" />
+    <LayerRef name="TopOverlay" />
+    <LayerRef name="TopSolder" />
+    <LayerRef name="TopLayer" />
+    <LayerRef name="Dielectric4" />
+    <LayerRef name="Dielectric5" />
+    <LayerRef name="Dielectric6" />
+    <LayerRef name="BottomLayer" />
+    <LayerRef name="BottomSolder" />
+    <LayerRef name="BottomOverlay" />
+    <LayerRef name="BottomPaste" />
+    <LayerRef name="KeepOutLayer" />
+    <LayerRef name="Mechanical1" />
+    <LayerRef name="Mechanical3" />
+    <LayerRef name="Mechanical4" />
+    <LayerRef name="Mechanical13" />
+    <LayerRef name="Mechanical15" />
+    <LayerRef name="Drill Drawing (TopLayer - BottomLayer)" />
+    <LayerRef name="Drill Guide (TopLayer - BottomLayer)" />
+    <BomRef name="BOM" />
+    <DictionaryStandard units="MILLIMETER">
+      <EntryStandard id="RECTANGLE_748660X748660">
+        <RectCenter width="1.901596" height="1.901596" />
+      </EntryStandard>
+      <EntryStandard id="RECTANGLE_709292X709292">
+        <RectCenter width="1.801602" height="1.801602" />
+      </EntryStandard>
+      <EntryStandard id="CIRCLE_748660">
+        <Circle diameter="1.901596" />
+      </EntryStandard>
+      <EntryStandard id="CIRCLE_708660">
+        <Circle diameter="1.799996" />
+      </EntryStandard>
+      <EntryStandard id="CIRCLE_709292">
+        <Circle diameter="1.801602" />
+      </EntryStandard>
+      <EntryStandard id="CIRCLE_669292">
+        <Circle diameter="1.700002" />
+      </EntryStandard>
+    </DictionaryStandard>
+    <DictionaryColor>
+      <EntryColor id="LAYER_COLOR_TopPaste">
+        <Color r="128" g="128" b="128" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_TopOverlay">
+        <Color r="255" g="255" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_TopSolder">
+        <Color r="128" g="0" b="128" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_TopLayer">
+        <Color r="255" g="0" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Dielectric4">
+        <Color r="255" g="0" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Dielectric5">
+        <Color r="255" g="0" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Dielectric6">
+        <Color r="255" g="0" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_BottomLayer">
+        <Color r="0" g="0" b="255" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_BottomSolder">
+        <Color r="255" g="0" b="255" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_BottomOverlay">
+        <Color r="128" g="128" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_BottomPaste">
+        <Color r="128" g="0" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_KeepOutLayer">
+        <Color r="255" g="0" b="255" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Mechanical1">
+        <Color r="255" g="0" b="255" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Mechanical3">
+        <Color r="0" g="128" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Mechanical4">
+        <Color r="153" g="204" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Mechanical13">
+        <Color r="255" g="0" b="255" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Mechanical15">
+        <Color r="0" g="128" b="0" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Drill Drawing (TopLayer - BottomLayer)">
+        <Color r="255" g="0" b="42" />
+      </EntryColor>
+      <EntryColor id="LAYER_COLOR_Drill Guide (TopLayer - BottomLayer)">
+        <Color r="128" g="0" b="0" />
+      </EntryColor>
+    </DictionaryColor>
+  </Content>
+  <LogisticHeader>
+    <Role id="Owner" roleFunction="ENGINEER" />
+    <Enterprise id="Enterprise" code="UNKNOWN" />
+    <Person name="Unknown" enterpriseRef="Enterprise" roleRef="Owner" />
+  </LogisticHeader>
+  <Bom name="BOM">
+    <BomHeader assembly="Assembly" revision="Revision">
+      <StepRef name="AT long bus (13.3 x 4.2 inches)" />
+    </BomHeader>
+    <BomItem OEMDesignNumberRef="PCBlibary.PcbLib:ESP8266" quantity="1" pinCount="30" category="ELECTRICAL" internalPartNumber="ESP8266" description="ESP8266">
+      <RefDes name="AT long bus (13.3 x 4.2 inches)_IC2" packageRef="ESP8266" layerRef="TopLayer" />
+      <Characteristics category="ELECTRICAL" />
+    </BomItem>
+    <BomItem OEMDesignNumberRef="PCBlibary.PcbLib:CCS811" quantity="1" pinCount="8" category="ELECTRICAL" internalPartNumber="CCS811" description="CCS811">
+      <RefDes name="AT long bus (13.3 x 4.2 inches)_IC1" packageRef="CCS811" layerRef="TopLayer" />
+      <Characteristics category="ELECTRICAL" />
+    </BomItem>
+    <BomItem OEMDesignNumberRef="PCBlibary.PcbLib:IS7021" quantity="1" pinCount="5" category="ELECTRICAL" internalPartNumber="IS7021" description="IS7021">
+      <RefDes name="AT long bus (13.3 x 4.2 inches)_IC3" packageRef="IS7021" layerRef="TopLayer" />
+      <Characteristics category="ELECTRICAL" />
+    </BomItem>
+  </Bom>
+  <Ecad name="output PCB cad-data">
+    <CadHeader units="MILLIMETER">
+      <Spec name="TopPaste">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="TopOverlay">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="TopSolder">
+        <General type="MATERIAL">
+          <Property text="Solder Resist" />
+        </General>
+      </Spec>
+      <Spec name="TopLayer">
+        <General type="MATERIAL">
+          <Property text="Copper" />
+        </General>
+      </Spec>
+      <Spec name="Dielectric4">
+        <General type="MATERIAL">
+          <Property text="FR-4" />
+        </General>
+      </Spec>
+      <Spec name="Dielectric5">
+        <General type="MATERIAL">
+          <Property text="FR-4" />
+        </General>
+      </Spec>
+      <Spec name="Dielectric6">
+        <General type="MATERIAL">
+          <Property text="FR-4" />
+        </General>
+      </Spec>
+      <Spec name="BottomLayer">
+        <General type="MATERIAL">
+          <Property text="Copper" />
+        </General>
+      </Spec>
+      <Spec name="BottomSolder">
+        <General type="MATERIAL">
+          <Property text="Solder Resist" />
+        </General>
+      </Spec>
+      <Spec name="BottomOverlay">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="BottomPaste">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="KeepOutLayer">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="Mechanical1">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="Mechanical3">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="Mechanical4">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="Mechanical13">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="Mechanical15">
+        <General type="MATERIAL" />
+      </Spec>
+      <Spec name="Drill Drawing (TopLayer - BottomLayer)">
+        <General type="MATERIAL">
+          <Property text="undefined" />
+        </General>
+      </Spec>
+      <Spec name="Drill Guide (TopLayer - BottomLayer)">
+        <General type="MATERIAL">
+          <Property text="undefined" />
+        </General>
+      </Spec>
+    </CadHeader>
+    <CadData>
+      <Layer name="TopPaste" layerFunction="PASTEMASK" side="TOP" polarity="POSITIVE" />
+      <Layer name="TopOverlay" layerFunction="LEGEND" side="TOP" polarity="POSITIVE" />
+      <Layer name="TopSolder" layerFunction="SOLDERMASK" side="TOP" polarity="POSITIVE" />
+      <Layer name="TopLayer" layerFunction="SIGNAL" side="TOP" polarity="POSITIVE" />
+      <Layer name="Dielectric4" layerFunction="DIELCORE" side="NONE" polarity="POSITIVE" />
+      <Layer name="Dielectric5" layerFunction="DIELCORE" side="NONE" polarity="POSITIVE" />
+      <Layer name="Dielectric6" layerFunction="DIELCORE" side="NONE" polarity="POSITIVE" />
+      <Layer name="BottomLayer" layerFunction="SIGNAL" side="BOTTOM" polarity="POSITIVE" />
+      <Layer name="BottomSolder" layerFunction="SOLDERMASK" side="BOTTOM" polarity="POSITIVE" />
+      <Layer name="BottomOverlay" layerFunction="LEGEND" side="BOTTOM" polarity="POSITIVE" />
+      <Layer name="BottomPaste" layerFunction="PASTEMASK" side="BOTTOM" polarity="POSITIVE" />
+      <Layer name="KeepOutLayer" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Mechanical1" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Mechanical3" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Mechanical4" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Mechanical13" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Mechanical15" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Drill Drawing (TopLayer - BottomLayer)" layerFunction="DOCUMENT" side="INTERNAL" polarity="POSITIVE" />
+      <Layer name="Drill Guide (TopLayer - BottomLayer)" layerFunction="DRILL" side="INTERNAL" polarity="POSITIVE" />
+      <Stackup name="Stackup" overallThickness="1.05156" tolPlus="0" tolMinus="0" whereMeasured="OTHER">
+        <StackupGroup name="AT long bus (13.3 x 4.2 inches)_AllStackupLayers" thickness="1.05156" tolPlus="0" tolMinus="0">
+          <StackupLayer layerOrGroupRef="TopPaste" thickness="0" tolPlus="0" tolMinus="0" sequence="1">
+            <SpecRef id="TopPaste" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="TopOverlay" thickness="0" tolPlus="0" tolMinus="0" sequence="2">
+            <SpecRef id="TopOverlay" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="TopSolder" thickness="0.01016" tolPlus="0" tolMinus="0" sequence="3">
+            <SpecRef id="TopSolder" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="TopLayer" thickness="0.03556" tolPlus="0" tolMinus="0" sequence="4">
+            <SpecRef id="TopLayer" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Dielectric4" thickness="0.32004" tolPlus="0" tolMinus="0" sequence="5">
+            <SpecRef id="Dielectric4" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Dielectric5" thickness="0.32004" tolPlus="0" tolMinus="0" sequence="6">
+            <SpecRef id="Dielectric5" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Dielectric6" thickness="0.32004" tolPlus="0" tolMinus="0" sequence="7">
+            <SpecRef id="Dielectric6" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="BottomLayer" thickness="0.03556" tolPlus="0" tolMinus="0" sequence="8">
+            <SpecRef id="BottomLayer" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="BottomSolder" thickness="0.01016" tolPlus="0" tolMinus="0" sequence="9">
+            <SpecRef id="BottomSolder" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="BottomOverlay" thickness="0" tolPlus="0" tolMinus="0" sequence="10">
+            <SpecRef id="BottomOverlay" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="BottomPaste" thickness="0" tolPlus="0" tolMinus="0" sequence="11">
+            <SpecRef id="BottomPaste" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="KeepOutLayer" thickness="0" tolPlus="0" tolMinus="0" sequence="12">
+            <SpecRef id="KeepOutLayer" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Mechanical1" thickness="0" tolPlus="0" tolMinus="0" sequence="13">
+            <SpecRef id="Mechanical1" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Mechanical3" thickness="0" tolPlus="0" tolMinus="0" sequence="14">
+            <SpecRef id="Mechanical3" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Mechanical4" thickness="0" tolPlus="0" tolMinus="0" sequence="15">
+            <SpecRef id="Mechanical4" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Mechanical13" thickness="0" tolPlus="0" tolMinus="0" sequence="16">
+            <SpecRef id="Mechanical13" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Mechanical15" thickness="0" tolPlus="0" tolMinus="0" sequence="17">
+            <SpecRef id="Mechanical15" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Drill Drawing (TopLayer - BottomLayer)" thickness="0" tolPlus="0" tolMinus="0" sequence="18">
+            <SpecRef id="Drill Drawing (TopLayer - BottomLayer)" />
+          </StackupLayer>
+          <StackupLayer layerOrGroupRef="Drill Guide (TopLayer - BottomLayer)" thickness="0" tolPlus="0" tolMinus="0" sequence="19">
+            <SpecRef id="Drill Guide (TopLayer - BottomLayer)" />
+          </StackupLayer>
+        </StackupGroup>
+      </Stackup>
+      <Step name="AT long bus (13.3 x 4.2 inches)">
+        <Datum x="101.600003" y="154.400001" />
+        <Profile>
+          <Polygon>
+            <PolyBegin x="105.600002" y="155.998022" />
+            <PolyStepCurve x="105.219002" y="156.379022" centerX="105.219002" centerY="155.998022" clockwise="false" />
+            <PolyStepSegment x="105.219002" y="156.381201" />
+            <PolyStepSegment x="101.981003" y="156.381201" />
+            <PolyStepCurve x="101.600003" y="156.762201" centerX="101.981003" centerY="156.762201" clockwise="true" />
+            <PolyStepSegment x="101.599997" y="156.762201" />
+            <PolyStepSegment x="101.6" y="238.956601" />
+            <PolyStepSegment x="101.600003" y="238.956601" />
+            <PolyStepCurve x="102.057203" y="239.413801" centerX="102.057203" centerY="238.956601" clockwise="true" />
+            <PolyStepSegment x="102.057203" y="239.413796" />
+            <PolyStepSegment x="154.127203" y="239.413801" />
+            <PolyStepCurve x="154.584403" y="238.956601" centerX="154.127203" centerY="238.956601" clockwise="true" />
+            <PolyStepSegment x="154.584403" y="238.905801" />
+            <PolyStepSegment x="154.584392" y="238.905801" />
+            <PolyStepSegment x="154.58438" y="156.762201" />
+            <PolyStepSegment x="154.584403" y="156.762201" />
+            <PolyStepCurve x="154.203403" y="156.381201" centerX="154.203403" centerY="156.762201" clockwise="true" />
+            <PolyStepSegment x="150.965403" y="156.381201" />
+            <PolyStepSegment x="150.965403" y="156.379022" />
+            <PolyStepCurve x="150.584403" y="155.998022" centerX="150.965403" centerY="155.998022" clockwise="false" />
+            <PolyStepSegment x="150.584403" y="154.845001" />
+            <PolyStepCurve x="150.139397" y="154.399996" centerX="150.139397" centerY="154.845001" clockwise="true" />
+            <PolyStepSegment x="106.045008" y="154.399996" />
+            <PolyStepCurve x="105.600002" y="154.845001" centerX="106.045008" centerY="154.845001" clockwise="true" />
+            <PolyStepSegment x="105.600002" y="155.998022" />
+          </Polygon>
+        </Profile>
+        <PadStack net="NetIC1_7">
+          <LayerHole name="23 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="213.614">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="23" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="23" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="23" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="23" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="22 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="211.074">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="211.074" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="22" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="211.074" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="22" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="211.074" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="22" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="211.074" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="22" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="21 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="208.534">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="21" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="21" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="21" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="21" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="20 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="205.994">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="20" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="20" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="20" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="20" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="19 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="203.454">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="19" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="19" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="19" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="19" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="18 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="200.914">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="18" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="18" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="18" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="18" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="17 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.302" y="198.3486">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.302" y="198.3486" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="17" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.302" y="198.3486" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="17" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.302" y="198.3486" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="17" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.302" y="198.3486" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="17" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_1">
+          <LayerHole name="16 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="195.834">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="16" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="16" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="16" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="16" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="30 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="231.394">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="30" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="30" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="30" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="30" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_3">
+          <LayerHole name="29 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="228.854">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="228.854" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="29" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="228.854" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="29" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="228.854" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="29" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="228.854" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="29" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_4">
+          <LayerHole name="28 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="226.314">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="28" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="28" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="28" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="28" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="27 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="223.774">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="27" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="27" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="27" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="27" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="26 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="221.234">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="26" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="26" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="26" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="26" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="25 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="218.694">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="25" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="25" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="25" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.3274" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="25" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="24 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.302" y="216.1286">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="90" />
+            <Location x="130.302" y="216.1286" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="24" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="90" />
+            <Location x="130.302" y="216.1286" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="24" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="90" />
+            <Location x="130.302" y="216.1286" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="24" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="90" />
+            <Location x="130.302" y="216.1286" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="24" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="8 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="213.614">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="8" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="8" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="8" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="213.614" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="8" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="7 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="216.154">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="216.154" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="7" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="216.154" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="7" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="216.154" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="7" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="216.154" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="7" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="6 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="218.694">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="6" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="6" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="6" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="218.694" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="6" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="5 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="221.234">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="221.234" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="5" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="4 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="223.774">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="223.774" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="4" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="3 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="226.314">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="226.314" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="3" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="2 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="228.8794">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="228.8794" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="228.8794" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="228.8794" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="228.8794" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="2" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="1 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="231.394">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="231.394" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="1" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="15 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="195.834">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="15" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="15" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="15" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="195.834" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="15" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="14 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="198.374">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="198.374" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="14" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="198.374" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="14" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="198.374" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="14" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="198.374" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="14" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="13 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="200.914">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="13" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="13" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="13" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="200.914" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="13" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="12 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="203.454">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="12" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="12" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="12" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="203.454" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="12" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="11 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="205.994">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="11" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="11" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="11" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="205.994" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="11" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="10 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="208.534">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="10" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="10" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.442" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="10" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.442" y="208.534" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="10" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="9 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="211.0994">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="211.0994" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="9" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="211.0994" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="9" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="211.0994" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="9" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="107.4674" y="211.0994" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC2" pin="9" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_1">
+          <LayerHole name="1 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.6426" y="232.1306">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="232.1306" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="232.1306" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="232.1306" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="232.1306" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="1" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_3">
+          <LayerHole name="2 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.668" y="229.616">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.668" y="229.616" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.668" y="229.616" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.668" y="229.616" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.668" y="229.616" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="2" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_4">
+          <LayerHole name="3 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.6426" y="227.0506">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="227.0506" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="227.0506" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="227.0506" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="227.0506" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="3" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="4 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.6426" y="224.5106">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="224.5106" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="224.5106" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="224.5106" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.6426" y="224.5106" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="4" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="5 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.668" y="221.9706">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.668" y="221.9706" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.668" y="221.9706" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.668" y="221.9706" />
+            <StandardPrimitiveRef id="CIRCLE_708660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.668" y="221.9706" />
+            <StandardPrimitiveRef id="CIRCLE_748660" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC3" pin="5" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_1">
+          <LayerHole name="1 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="217.9066">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="217.9066" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="217.9066" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="217.9066" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="1" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="217.9066" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="1" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="2 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.795" y="215.392">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.795" y="215.392" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.795" y="215.392" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.795" y="215.392" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="2" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.795" y="215.392" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="2" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_3">
+          <LayerHole name="3 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="212.8266">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="212.8266" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="212.8266" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="212.8266" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="3" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="212.8266" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="3" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_4">
+          <LayerHole name="4 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="210.2866">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="210.2866" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="210.2866" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="210.2866" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="4" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="210.2866" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="4" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="GND">
+          <LayerHole name="5 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="207.7466">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="207.7466" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="207.7466" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="207.7466" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="5" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="207.7466" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="5" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="6 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="205.2066">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="205.2066" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="6" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="205.2066" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="6" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="205.2066" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="6" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="205.2066" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="6" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="NetIC1_7">
+          <LayerHole name="7 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="202.6666">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="202.6666" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="7" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="202.6666" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="7" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="202.6666" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="7" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="202.6666" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="7" />
+          </LayerPad>
+        </PadStack>
+        <PadStack net="No Net">
+          <LayerHole name="8 Hole" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="200.1266">
+            <Span fromLayer="TopLayer" toLayer="BottomLayer" />
+          </LayerHole>
+          <LayerPad layerRef="TopSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="200.1266" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="8" />
+          </LayerPad>
+          <LayerPad layerRef="TopLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="200.1266" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="8" />
+          </LayerPad>
+          <LayerPad layerRef="BottomLayer">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="200.1266" />
+            <StandardPrimitiveRef id="CIRCLE_669292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="8" />
+          </LayerPad>
+          <LayerPad layerRef="BottomSolder">
+            <Xform rotation="270" />
+            <Location x="137.7696" y="200.1266" />
+            <StandardPrimitiveRef id="CIRCLE_709292" />
+            <PinRef componentRef="AT long bus (13.3 x 4.2 inches)_IC1" pin="8" />
+          </LayerPad>
+        </PadStack>
+        <Package name="ESP8266" type="OTHER" pinOneOrientation="LOWER_LEFT" height="8.7617">
+          <Outline>
+            <Polygon>
+              <PolyBegin x="-15.181235" y="-25.000346" />
+              <PolyStepSegment x="14.859122" y="-25.000346" />
+              <PolyStepSegment x="14.859122" y="24.095131" />
+              <PolyStepSegment x="-15.181235" y="24.095131" />
+              <PolyStepSegment x="-15.181235" y="-25.000346" />
+            </Polygon>
+            <LineDesc lineEnd="NONE" lineWidth="0" lineProperty="SOLID" />
+          </Outline>
+          <Pin number="15" name="15" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="-17.5768" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="13" name="13" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="-12.4968" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="14" name="14" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="-15.0368" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="11" name="11" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="-7.4168" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="12" name="12" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.4808" y="-9.9568" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="10" name="10" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="-4.8768" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="7" name="7" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="2.7432" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="8" name="8" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="0.2032" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="4" name="4" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="10.3632" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="6" name="6" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="5.2832" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="3" name="3" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="12.9032" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="9" name="9" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.4808" y="-2.3114" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="1" name="1" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.5062" y="17.9832" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="2" name="2" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.4808" y="15.4686" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="17" name="17" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3538" y="-15.0622" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="16" name="16" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="-17.5768" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="19" name="19" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="-9.9568" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="18" name="18" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="-12.4968" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="21" name="21" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="-4.8768" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="20" name="20" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="-7.4168" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="23" name="23" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="0.2032" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="22" name="22" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="-2.3368" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="24" name="24" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3538" y="2.7178" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="25" name="25" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="5.2832" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="5" name="5" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-11.4808" y="7.8232" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="26" name="26" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="7.8232" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="28" name="28" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="12.9032" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="27" name="27" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="10.3632" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="30" name="30" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="17.9832" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="29" name="29" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="11.3792" y="15.4432" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+        </Package>
+        <Package name="CCS811" type="OTHER" pinOneOrientation="LOWER_LEFT" height="8.636">
+          <Outline>
+            <Polygon>
+              <PolyBegin x="-11.11252" y="-9.017" />
+              <PolyStepSegment x="-11.11252" y="9.016919" />
+              <PolyStepSegment x="11.11252" y="9.016919" />
+              <PolyStepSegment x="11.11252" y="-9.017" />
+              <PolyStepSegment x="-11.11252" y="-9.017" />
+            </Polygon>
+            <LineDesc lineEnd="NONE" lineWidth="0" lineProperty="SOLID" />
+          </Outline>
+          <Pin number="1" name="1" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-9.1186" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="4" name="4" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-1.4986" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="3" name="3" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-4.0386" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="7" name="7" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="6.1214" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="8" name="8" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="8.6614" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="6" name="6" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="3.5814" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="5" name="5" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="1.0414" y="-5.9944" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+          <Pin number="2" name="2" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="-6.604" y="-5.969" />
+            <StandardPrimitiveRef id="RECTANGLE_709292X709292" />
+          </Pin>
+        </Package>
+        <Package name="IS7021" type="OTHER" pinOneOrientation="LOWER_LEFT" height="8.636">
+          <Outline>
+            <Polygon>
+              <PolyBegin x="-1.269919" y="-1.269919" />
+              <PolyStepSegment x="-1.269919" y="7.730081" />
+              <PolyStepSegment x="11.430081" y="7.730081" />
+              <PolyStepSegment x="11.430081" y="-1.269919" />
+              <PolyStepSegment x="-1.269919" y="-1.269919" />
+            </Polygon>
+            <LineDesc lineEnd="NONE" lineWidth="0" lineProperty="SOLID" />
+          </Outline>
+          <Pin number="3" name="3" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="5.08" y="0" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="4" name="4" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="7.62" y="0" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="5" name="5" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="10.16" y="0.0254" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="1" name="1" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="0" y="0" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+          <Pin number="2" name="2" type="THRU" electricalType="ELECTRICAL" mountType="SURFACE_MOUNT_PIN">
+            <Location x="2.5146" y="0.0254" />
+            <StandardPrimitiveRef id="RECTANGLE_748660X748660" />
+          </Pin>
+        </Package>
+        <Component refDes="AT long bus (13.3 x 4.2 inches)_IC2" packageRef="ESP8266" part="ESP8266" layerRef="TopLayer" mountType="OTHER" weight="0" height="8.7617" standoff="-6.000001">
+          <Xform />
+          <Location x="118.9482" y="213.4108" />
+        </Component>
+        <Component refDes="AT long bus (13.3 x 4.2 inches)_IC1" packageRef="CCS811" part="CCS811" layerRef="TopLayer" mountType="OTHER" weight="0" height="8.636" standoff="-3.302">
+          <Xform rotation="270" />
+          <Location x="143.764" y="208.788" />
+        </Component>
+        <Component refDes="AT long bus (13.3 x 4.2 inches)_IC3" packageRef="IS7021" part="IS7021" layerRef="TopLayer" mountType="OTHER" weight="0" height="8.636" standoff="-3.302">
+          <Xform rotation="270" />
+          <Location x="137.6426" y="232.1306" />
+        </Component>
+        <LayerFeature layerRef="TopPaste">
+          <Set>
+            <ColorRef id="LAYER_COLOR_TopPaste" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="TopOverlay">
+          <Set>
+            <ColorRef id="LAYER_COLOR_TopOverlay" />
+          </Set>
+          <Set net="No Net">
+            <Features>
+              <UserSpecial>
+                <Line startX="103.8606" startY="238.924742" endX="104.127181" endY="238.924742">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.127181" startY="238.924742" endX="103.993892" endY="238.924742">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="103.993892" startY="238.924742" endX="103.993892" endY="238.125">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="103.993892" startY="238.125" endX="103.8606" endY="238.125">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="103.8606" startY="238.125" endX="104.127181" endY="238.125">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.060214" startY="238.791453" endX="104.926925" endY="238.924742">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.926925" startY="238.924742" endX="104.660344" endY="238.924742">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.660344" startY="238.924742" endX="104.527053" endY="238.791453">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.527053" startY="238.791453" endX="104.527053" endY="238.258292">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.527053" startY="238.258292" endX="104.660344" endY="238.125">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.660344" startY="238.125" endX="104.926925" endY="238.125">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="104.926925" startY="238.125" endX="105.060214" endY="238.258292">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.859956" startY="238.125" endX="105.326795" endY="238.125">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.326795" startY="238.125" endX="105.859956" endY="238.658161">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.859956" startY="238.658161" endX="105.859956" endY="238.791453">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.859956" startY="238.791453" endX="105.726667" endY="238.924742">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.726667" startY="238.924742" endX="105.460086" endY="238.924742">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.460086" startY="238.924742" endX="105.326795" endY="238.791453">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.8486" startY="221.297142" endX="135.115181" endY="221.297142">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.115181" startY="221.297142" endX="134.981892" endY="221.297142">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.981892" startY="221.297142" endX="134.981892" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.981892" startY="220.4974" endX="134.8486" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.8486" startY="220.4974" endX="135.115181" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.048214" startY="221.163853" endX="135.914925" endY="221.297142">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.914925" startY="221.297142" endX="135.648344" endY="221.297142">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.648344" startY="221.297142" endX="135.515053" endY="221.163853">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.515053" startY="221.163853" endX="135.515053" endY="220.630692">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.515053" startY="220.630692" endX="135.648344" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.648344" startY="220.4974" endX="135.914925" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.914925" startY="220.4974" endX="136.048214" endY="220.630692">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.314795" startY="220.4974" endX="136.581375" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.581375" startY="220.4974" endX="136.448086" endY="220.4974">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.448086" startY="220.4974" endX="136.448086" endY="221.297142">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.448086" startY="221.297142" endX="136.448086" endY="221.297142">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.448086" startY="221.297142" endX="136.314795" endY="221.163853">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.4742" startY="234.809942" endX="136.740781" endY="234.809942">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.740781" startY="234.809942" endX="136.607492" endY="234.809942">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.607492" startY="234.809942" endX="136.607492" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.607492" startY="234.0102" endX="136.4742" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.4742" startY="234.0102" endX="136.740781" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.673814" startY="234.676653" endX="137.540525" endY="234.809942">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.540525" startY="234.809942" endX="137.273944" endY="234.809942">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.273944" startY="234.809942" endX="137.140653" endY="234.676653">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.140653" startY="234.676653" endX="137.140653" endY="234.143492">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.140653" startY="234.143492" endX="137.273944" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.273944" startY="234.0102" endX="137.540525" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.540525" startY="234.0102" endX="137.673814" endY="234.143492">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.940395" startY="234.676653" endX="138.073686" endY="234.809942">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.073686" startY="234.809942" endX="138.340267" endY="234.809942">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.340267" startY="234.809942" endX="138.473556" endY="234.676653">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.676653" endX="138.473556" endY="234.543361">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.543361" endX="138.473556" endY="234.543361">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.543361" endX="138.473556" endY="234.543361">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.543361" endX="138.473556" endY="234.543361">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.543361" endX="138.340267" endY="234.410072">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.340267" startY="234.410072" endX="138.206975" endY="234.410072">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.206975" startY="234.410072" endX="138.340267" endY="234.410072">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.340267" startY="234.410072" endX="138.473556" endY="234.276781">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.276781" endX="138.473556" endY="234.143492">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.473556" startY="234.143492" endX="138.340267" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.340267" startY="234.0102" endX="138.073686" endY="234.0102">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.073686" startY="234.0102" endX="137.940395" endY="234.143492">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="TopSolder">
+          <Set>
+            <ColorRef id="LAYER_COLOR_TopSolder" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="TopLayer">
+          <Set>
+            <ColorRef id="LAYER_COLOR_TopLayer" />
+          </Set>
+          <Set net="NetIC1_1">
+            <Features>
+              <UserSpecial>
+                <Line startX="139.446" startY="199.644" endX="139.446" endY="216.2302">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.7696" startY="217.9066" endX="139.446" endY="216.2302">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.5852" startY="195.7832" endX="139.446" endY="199.644">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.2512" startY="195.7832" endX="135.5852" endY="195.7832">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.4554" startY="232.1306" endX="139.446" endY="231.14">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="139.446" startY="219.583" endX="139.446" endY="231.14">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.7696" startY="217.9066" endX="139.446" endY="219.583">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.6426" startY="232.1306" endX="138.4554" endY="232.1306">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+          <Set net="GND">
+            <Features>
+              <UserSpecial>
+                <Line startX="130.2385" startY="216.0651" endX="134.2009" endY="216.0651">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.2258" startY="216.0778" endX="130.2385" endY="216.0651">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.3658" startY="208.4832" endX="109.22" endY="206.629">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.442" startY="195.58" endX="107.442" endY="195.834">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.254" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="223.012" endX="137.6426" endY="224.5106">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="216.916" endX="136.144" endY="223.012">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="216.916" endX="137.668" endY="215.392">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="209.3722" endX="136.144" endY="213.741">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="209.3722" endX="137.7696" endY="207.7466">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="213.741" endX="137.795" endY="215.392">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.874" startY="215.392" endX="137.668" endY="215.392">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.2009" startY="216.0651" endX="134.874" endY="215.392">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="109.22" startY="197.612" endX="109.22" endY="206.629">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.442" startY="195.834" endX="109.22" endY="197.612">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.2385" startY="216.0651" endX="130.302" endY="216.1286">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.3912" startY="195.7832" endX="107.442" endY="195.834">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.3658" startY="195.7832" endX="107.3912" endY="195.7832">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.668" startY="215.392" endX="137.795" endY="215.392">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+          <Set net="NetIC1_4">
+            <Features>
+              <UserSpecial>
+                <Line startX="130.2512" startY="226.2632" endX="134.3152" endY="226.2632">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.1026" startY="227.0506" endX="137.6426" endY="227.0506">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.3152" startY="226.2632" endX="135.1026" endY="227.0506">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+          <Set net="NetIC1_3">
+            <Features>
+              <UserSpecial>
+                <Line startX="130.2512" startY="228.8032" endX="134.0612" endY="228.8032">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.0612" startY="228.8032" endX="134.874" endY="229.616">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="134.874" startY="229.616" endX="137.668" endY="229.616">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+          <Set net="NetIC1_7">
+            <Features>
+              <UserSpecial>
+                <Line startX="130.2512" startY="213.5632" endX="135.382" endY="208.4324">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.382" startY="205.0542" endX="137.7696" endY="202.6666">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="135.382" startY="205.0542" endX="135.382" endY="208.4324">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Dielectric4">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Dielectric4" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Dielectric5">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Dielectric5" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Dielectric6">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Dielectric6" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="BottomLayer">
+          <Set>
+            <ColorRef id="LAYER_COLOR_BottomLayer" />
+          </Set>
+          <Set net="GND">
+            <Features>
+              <UserSpecial>
+                <Line startX="107.3912" startY="195.7832" endX="118.0592" endY="195.7832">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="118.0592" startY="195.7832" endX="120.5738" endY="198.2978">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="120.5738" startY="198.2978" endX="130.2258" endY="198.2978">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="128.524" startY="200.1266" endX="130.302" endY="198.3486">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="128.524" startY="200.1266" endX="128.524" endY="214.3506">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="128.524" startY="214.3506" endX="130.2385" endY="216.0651">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+          <Set net="NetIC1_4">
+            <Features>
+              <UserSpecial>
+                <Line startX="136.144" startY="225.298" endX="137.6426" endY="226.7966">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="211.328" endX="136.144" endY="225.298">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="136.144" startY="211.328" endX="137.1854" endY="210.2866">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.6426" startY="226.7966" endX="137.6426" endY="227.0506">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.1854" startY="210.2866" endX="137.7696" endY="210.2866">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+          <Set net="NetIC1_3">
+            <Features>
+              <UserSpecial>
+                <Line startX="139.446" startY="214.503" endX="139.446" endY="228.092">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.922" startY="229.616" endX="139.446" endY="228.092">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.668" startY="229.616" endX="137.922" endY="229.616">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.7696" startY="212.8266" endX="139.446" endY="214.503">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.299999" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="BottomSolder">
+          <Set>
+            <ColorRef id="LAYER_COLOR_BottomSolder" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="BottomOverlay">
+          <Set>
+            <ColorRef id="LAYER_COLOR_BottomOverlay" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="BottomPaste">
+          <Set>
+            <ColorRef id="LAYER_COLOR_BottomPaste" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="KeepOutLayer">
+          <Set>
+            <ColorRef id="LAYER_COLOR_KeepOutLayer" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Mechanical1">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Mechanical1" />
+          </Set>
+          <Set net="No Net">
+            <Features>
+              <UserSpecial>
+                <Arc startX="154.584403" startY="238.956601" endX="154.127203" endY="239.413801" centerX="154.127203" centerY="238.956601" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="102.057203" startY="239.413801" endX="101.600003" endY="238.956601" centerX="102.057203" centerY="238.956601" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="101.600003" startY="156.762201" endX="101.981003" endY="156.381201" centerX="101.981003" centerY="156.762201" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="105.600002" startY="155.998022" endX="105.219002" endY="156.379022" centerX="105.219002" centerY="155.998022" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="105.600002" startY="154.845001" endX="106.045008" endY="154.399996" centerX="106.045008" centerY="154.845001" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="150.139397" startY="154.399996" endX="150.584403" endY="154.845001" centerX="150.139397" centerY="154.845001" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="150.965403" startY="156.379022" endX="150.584403" endY="155.998022" centerX="150.965403" centerY="155.998022" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Arc startX="154.203403" startY="156.381201" endX="154.584403" endY="156.762201" centerX="154.203403" centerY="156.762201" clockwise="false">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Arc>
+                <Line startX="154.584403" startY="238.905801" endX="154.584403" endY="238.956601">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="102.057203" startY="239.413796" endX="154.127203" endY="239.413801">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="154.58438" startY="156.762201" endX="154.584392" endY="238.905801">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="101.981003" startY="156.381201" endX="102.133403" endY="156.381201">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="101.599997" startY="156.762201" endX="101.6" endY="238.956601">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="102.133403" startY="156.381201" endX="105.219002" endY="156.381201">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="105.600002" startY="154.845001" endX="105.600002" endY="155.998022">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="150.584403" startY="154.845001" endX="150.584403" endY="155.998022">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="150.965403" startY="156.381201" endX="154.051003" endY="156.381201">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="154.051003" startY="156.381201" endX="154.203403" endY="156.381201">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+                <Line startX="106.045008" startY="154.399996" endX="150.139397" endY="154.399996">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.1" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Mechanical3">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Mechanical3" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Mechanical4">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Mechanical4" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Mechanical13">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Mechanical13" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Mechanical15">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Mechanical15" />
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Drill Drawing (TopLayer - BottomLayer)">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Drill Drawing (TopLayer - BottomLayer)" />
+          </Set>
+          <Set net="No Net">
+            <Features>
+              <UserSpecial>
+                <Line startX="137.346268" startY="199.703268" endX="138.192932" endY="199.703268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="199.703268" endX="138.192932" endY="200.549932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="200.549932" endX="138.192932" endY="200.549932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="199.703268" endX="137.346268" endY="200.549932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="202.243268" endX="138.192932" endY="202.243268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="202.243268" endX="138.192932" endY="203.089932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="203.089932" endX="138.192932" endY="203.089932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="202.243268" endX="137.346268" endY="203.089932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="204.783268" endX="138.192932" endY="204.783268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="204.783268" endX="138.192932" endY="205.629932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="205.629932" endX="138.192932" endY="205.629932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="204.783268" endX="137.346268" endY="205.629932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="207.323268" endX="138.192932" endY="207.323268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="207.323268" endX="138.192932" endY="208.169932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="208.169932" endX="138.192932" endY="208.169932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="207.323268" endX="137.346268" endY="208.169932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="209.863268" endX="138.192932" endY="209.863268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="209.863268" endX="138.192932" endY="210.709932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="210.709932" endX="138.192932" endY="210.709932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="209.863268" endX="137.346268" endY="210.709932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="212.403268" endX="138.192932" endY="212.403268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="212.403268" endX="138.192932" endY="213.249932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="213.249932" endX="138.192932" endY="213.249932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="212.403268" endX="137.346268" endY="213.249932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.371668" startY="214.968668" endX="138.218332" endY="214.968668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.218332" startY="214.968668" endX="138.218332" endY="215.815332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.371668" startY="215.815332" endX="138.218332" endY="215.815332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.371668" startY="214.968668" endX="137.371668" endY="215.815332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="217.483268" endX="138.192932" endY="217.483268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.192932" startY="217.483268" endX="138.192932" endY="218.329932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="218.329932" endX="138.192932" endY="218.329932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.346268" startY="217.483268" endX="137.346268" endY="218.329932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.244668" startY="221.547268" endX="138.091332" endY="221.547268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.091332" startY="221.547268" endX="138.091332" endY="222.393932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.244668" startY="222.393932" endX="138.091332" endY="222.393932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.244668" startY="221.547268" endX="137.244668" endY="222.393932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="224.087268" endX="138.065932" endY="224.087268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.065932" startY="224.087268" endX="138.065932" endY="224.933932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="224.933932" endX="138.065932" endY="224.933932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="224.087268" endX="137.219268" endY="224.933932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="226.627268" endX="138.065932" endY="226.627268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.065932" startY="226.627268" endX="138.065932" endY="227.473932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="227.473932" endX="138.065932" endY="227.473932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="226.627268" endX="137.219268" endY="227.473932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.244668" startY="229.192668" endX="138.091332" endY="229.192668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.091332" startY="229.192668" endX="138.091332" endY="230.039332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.244668" startY="230.039332" endX="138.091332" endY="230.039332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.244668" startY="229.192668" endX="137.244668" endY="230.039332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="231.707268" endX="138.065932" endY="231.707268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="138.065932" startY="231.707268" endX="138.065932" endY="232.553932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="232.553932" endX="138.065932" endY="232.553932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="137.219268" startY="231.707268" endX="137.219268" endY="232.553932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="210.676068" endX="107.890732" endY="210.676068">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.890732" startY="210.676068" endX="107.890732" endY="211.522732">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="211.522732" endX="107.890732" endY="211.522732">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="210.676068" endX="107.044068" endY="211.522732">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="208.110668" endX="107.865332" endY="208.110668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="208.110668" endX="107.865332" endY="208.957332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="208.957332" endX="107.865332" endY="208.957332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="208.110668" endX="107.018668" endY="208.957332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="205.570668" endX="107.865332" endY="205.570668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="205.570668" endX="107.865332" endY="206.417332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="206.417332" endX="107.865332" endY="206.417332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="205.570668" endX="107.018668" endY="206.417332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="203.030668" endX="107.890732" endY="203.030668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.890732" startY="203.030668" endX="107.890732" endY="203.877332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="203.877332" endX="107.890732" endY="203.877332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="203.030668" endX="107.044068" endY="203.877332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="200.490668" endX="107.865332" endY="200.490668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="200.490668" endX="107.865332" endY="201.337332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="201.337332" endX="107.865332" endY="201.337332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="200.490668" endX="107.018668" endY="201.337332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="197.950668" endX="107.865332" endY="197.950668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="197.950668" endX="107.865332" endY="198.797332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="198.797332" endX="107.865332" endY="198.797332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="197.950668" endX="107.018668" endY="198.797332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="195.410668" endX="107.865332" endY="195.410668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="195.410668" endX="107.865332" endY="196.257332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="196.257332" endX="107.865332" endY="196.257332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="195.410668" endX="107.018668" endY="196.257332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="230.970668" endX="107.865332" endY="230.970668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="230.970668" endX="107.865332" endY="231.817332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="231.817332" endX="107.865332" endY="231.817332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="230.970668" endX="107.018668" endY="231.817332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="228.456068" endX="107.890732" endY="228.456068">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.890732" startY="228.456068" endX="107.890732" endY="229.302732">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="229.302732" endX="107.890732" endY="229.302732">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="228.456068" endX="107.044068" endY="229.302732">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="225.890668" endX="107.865332" endY="225.890668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="225.890668" endX="107.865332" endY="226.737332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="226.737332" endX="107.865332" endY="226.737332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="225.890668" endX="107.018668" endY="226.737332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="223.350668" endX="107.865332" endY="223.350668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="223.350668" endX="107.865332" endY="224.197332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="224.197332" endX="107.865332" endY="224.197332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="223.350668" endX="107.018668" endY="224.197332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="220.810668" endX="107.890732" endY="220.810668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.890732" startY="220.810668" endX="107.890732" endY="221.657332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="221.657332" endX="107.890732" endY="221.657332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.044068" startY="220.810668" endX="107.044068" endY="221.657332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="218.270668" endX="107.865332" endY="218.270668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="218.270668" endX="107.865332" endY="219.117332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="219.117332" endX="107.865332" endY="219.117332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="218.270668" endX="107.018668" endY="219.117332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="215.730668" endX="107.865332" endY="215.730668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="215.730668" endX="107.865332" endY="216.577332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="216.577332" endX="107.865332" endY="216.577332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="215.730668" endX="107.018668" endY="216.577332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="213.190668" endX="107.865332" endY="213.190668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.865332" startY="213.190668" endX="107.865332" endY="214.037332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="214.037332" endX="107.865332" endY="214.037332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="107.018668" startY="213.190668" endX="107.018668" endY="214.037332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.878668" startY="215.705268" endX="130.725332" endY="215.705268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.725332" startY="215.705268" endX="130.725332" endY="216.551932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.878668" startY="216.551932" endX="130.725332" endY="216.551932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.878668" startY="215.705268" endX="129.878668" endY="216.551932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="218.270668" endX="130.750732" endY="218.270668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="218.270668" endX="130.750732" endY="219.117332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="219.117332" endX="130.750732" endY="219.117332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="218.270668" endX="129.904068" endY="219.117332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="220.810668" endX="130.750732" endY="220.810668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="220.810668" endX="130.750732" endY="221.657332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="221.657332" endX="130.750732" endY="221.657332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="220.810668" endX="129.904068" endY="221.657332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="223.350668" endX="130.750732" endY="223.350668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="223.350668" endX="130.750732" endY="224.197332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="224.197332" endX="130.750732" endY="224.197332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="223.350668" endX="129.904068" endY="224.197332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="225.890668" endX="130.750732" endY="225.890668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="225.890668" endX="130.750732" endY="226.737332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="226.737332" endX="130.750732" endY="226.737332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="225.890668" endX="129.904068" endY="226.737332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="228.430668" endX="130.750732" endY="228.430668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="228.430668" endX="130.750732" endY="229.277332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="229.277332" endX="130.750732" endY="229.277332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="228.430668" endX="129.904068" endY="229.277332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="230.970668" endX="130.750732" endY="230.970668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="230.970668" endX="130.750732" endY="231.817332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="231.817332" endX="130.750732" endY="231.817332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="230.970668" endX="129.904068" endY="231.817332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="195.410668" endX="130.750732" endY="195.410668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="195.410668" endX="130.750732" endY="196.257332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="196.257332" endX="130.750732" endY="196.257332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="195.410668" endX="129.904068" endY="196.257332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.878668" startY="197.925268" endX="130.725332" endY="197.925268">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.725332" startY="197.925268" endX="130.725332" endY="198.771932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.878668" startY="198.771932" endX="130.725332" endY="198.771932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.878668" startY="197.925268" endX="129.878668" endY="198.771932">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="200.490668" endX="130.750732" endY="200.490668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="200.490668" endX="130.750732" endY="201.337332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="201.337332" endX="130.750732" endY="201.337332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="200.490668" endX="129.904068" endY="201.337332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="203.030668" endX="130.750732" endY="203.030668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="203.030668" endX="130.750732" endY="203.877332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="203.877332" endX="130.750732" endY="203.877332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="203.030668" endX="129.904068" endY="203.877332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="205.570668" endX="130.750732" endY="205.570668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="205.570668" endX="130.750732" endY="206.417332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="206.417332" endX="130.750732" endY="206.417332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="205.570668" endX="129.904068" endY="206.417332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="208.110668" endX="130.750732" endY="208.110668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="208.110668" endX="130.750732" endY="208.957332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="208.957332" endX="130.750732" endY="208.957332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="208.110668" endX="129.904068" endY="208.957332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="210.650668" endX="130.750732" endY="210.650668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="210.650668" endX="130.750732" endY="211.497332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="211.497332" endX="130.750732" endY="211.497332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="210.650668" endX="129.904068" endY="211.497332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="213.190668" endX="130.750732" endY="213.190668">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="130.750732" startY="213.190668" endX="130.750732" endY="214.037332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="214.037332" endX="130.750732" endY="214.037332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+                <Line startX="129.904068" startY="213.190668" endX="129.904068" endY="214.037332">
+                  <LineDesc lineEnd="ROUND" lineWidth="0.084666" lineProperty="SOLID" />
+                </Line>
+              </UserSpecial>
+            </Features>
+          </Set>
+        </LayerFeature>
+        <LayerFeature layerRef="Drill Guide (TopLayer - BottomLayer)">
+          <Set>
+            <ColorRef id="LAYER_COLOR_Drill Guide (TopLayer - BottomLayer)" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-23 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="213.614" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-22 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="211.074" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-21 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="208.534" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-20 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="205.994" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-19 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="203.454" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-18 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="200.914" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-17 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.302" y="198.3486" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-16 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="195.834" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-30 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="231.394" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-29 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="228.854" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-28 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="226.314" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-27 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="223.774" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-26 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="221.234" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-25 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.3274" y="218.694" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-24 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="130.302" y="216.1286" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-8 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="213.614" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-7 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="216.154" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-6 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="218.694" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-5 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="221.234" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-4 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="223.774" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-3 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="226.314" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-2 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="228.8794" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-1 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="231.394" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-15 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="195.834" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-14 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="198.374" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-13 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="200.914" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-12 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="203.454" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-11 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="205.994" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-10 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.442" y="208.534" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC2-9 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="107.4674" y="211.0994" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC3-1 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.6426" y="232.1306" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC3-2 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.668" y="229.616" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC3-3 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.6426" y="227.0506" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC3-4 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.6426" y="224.5106" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC3-5 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.668" y="221.9706" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-1 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="217.9066" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-2 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.795" y="215.392" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-3 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="212.8266" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-4 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="210.2866" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-5 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="207.7466" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-6 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="205.2066" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-7 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="202.6666" />
+          </Set>
+          <Set>
+            <Hole name="AT long bus (13.3 x 4.2 inches)_IC1-8 Hole Drill" diameter="1.02" platingStatus="PLATED" plusTol="0" minusTol="0" x="137.7696" y="200.1266" />
+          </Set>
+        </LayerFeature>
+      </Step>
+    </CadData>
+  </Ecad>
+</IPC-2581>

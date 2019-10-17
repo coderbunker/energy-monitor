@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=NetIC1_2 Pin=D1-2
+Added Pin To Net: NetName=NetIC1_2 Pin=D2-2
+Change Net Name : Old Net Name=NetIC1_2 New Net Name=GND
+Added Room: Name=AT long bus (13.3 x 4.2 inches)

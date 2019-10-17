@@ -1,0 +1,22 @@
+Altium Designer Pick and Place Locations
+C:\Users\Lsso\AppData\Local\TempReleases\Snapshot\1\Assembly\Pick Place\Pick Place for AT long bus (13.3 x 4.2 inches).txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       11.10.19
+Time:       12:41
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Center-X(mil) Center-Y(mil) Comment Description Designator Footprint  Layer    Rotation 
+1900.500      2075.500      220E    ""          R5         220E       TopLayer 90       
+1199.500      999.500       220E    ""          R4         220E       TopLayer 90       
+1199.500      1199.500      220E    ""          R3         220E       TopLayer 90       
+1746.694      414.961       si7021  ""          J3         3,5mm_Jack TopLayer 0        
+1046.693      414.961       si7021  ""          J2         3,5mm_Jack TopLayer 0        
+350.000       414.961       si7021  ""          J1         3,5mm_Jack TopLayer 0        
+1390.500      2750.000      ADS1115 ""          IC3        ADS1115    TopLayer 270      
+1390.500      1400.000      ADS1115 ""          IC1        ADS1115    TopLayer 270      
+647.500       2358.000      ESP8266 ""          IC2        ESP8266    TopLayer 0        

@@ -1,0 +1,5 @@
+DRC Rules Export File for PCB: C:\Users\Lsso\AppData\Local\TempReleases\Snapshot\1\AT long bus (13.3 x 4.2 inches).PCBDOC
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=2.00

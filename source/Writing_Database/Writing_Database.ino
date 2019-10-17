@@ -54,7 +54,6 @@ String MacToString(const uint8_t *mac);
 
 //InfluxDB initialisation -- START --------------------------------------------
 WiFiUDP udp;
-
 InfluxDB_Data dataPower("power_measurement");
 InfluxDB_Data dataAirQuality("quality_measurement");
 //InfluxDB initialisation -- END ----------------------------------------------
@@ -90,8 +89,8 @@ const float VOLTAGE_MAINS = 220.00; // line voltage
 const float COIL_WINDING = 2000;    // ratio of sensor 100:0.05
 
 //int16_t rawADCvalue;  // The is where we store the value we receive from the ADS1115
-//float MAX_CURRENT_COIL = 0.0707; // Maximum current of sensor rated at  Rms 100 A
-//float MAX_VOLTAGE_ADC = 15.981; // Maximum Voltage on burden resistor calculated by burden resistor * maxAmps (33 Ohm * 0.0707 A)
+float MAX_CURRENT_COIL = 0.0707; // Maximum current of sensor rated at  Rms 100 A
+float MAX_VOLTAGE_ADC = 15.981;  // Maximum Voltage on burden resistor calculated by burden resistor * maxAmps (33 Ohm * 0.0707 A)
 
 float voltage_adc_1 = 0.0; // The result of applying the scale factor to the raw value
 float voltage_adc_2 = 0.0;
@@ -114,6 +113,7 @@ float TVOCOLD = 0;
 float LongRST = 0;
 
 int writeflag = 0;
+int Powerflag = 0;
 
 String line;
 String PowerAsString;
@@ -306,6 +306,8 @@ void setup(void)
     {
         isPowerType = 1;
         isQualityType = 0;
+        Serial.println("power");
+        Powerflag = 1;
 
         dataPower.addTag("location", arduinoConfig->location);
         dataPower.addTag("room", arduinoConfig->room);
@@ -390,6 +392,9 @@ void loop(void)
 
         if (isPowerType)
         {
+            Serial.println(power_1);
+            Serial.println(power_3);
+            Serial.println(power_2);
             dataPower.clear(InfluxDB_Data::FIELD);
             dataPower.addField("power1_W", String(power_1));
             dataPower.addField("power2_W", String(power_2));
@@ -406,6 +411,31 @@ void loop(void)
         {
             LongRST = 0;
             SWI();
+            humidity = Si7021.getRH();
+            temperature = Si7021.getTemp();
+            if (CCS811.available())
+            {
+                if (!CCS811.readData())
+                {
+                    eCO2OLD = eCO2;
+                    TVOCOLD = TVOC;
+                    eCO2 = CCS811.geteCO2();
+                    TVOC = CCS811.getTVOC();
+                }
+                else
+                {
+                    Serial.println("ERROR!");
+                }
+            }
+            if (eCO2 - eCO2OLD >= 20)
+            {
+                writeflag = 0;
+                SWI();
+            }
+            else
+            {
+                writeflag = 1;
+            }
         }
         humidity = Si7021.getRH();
         temperature = Si7021.getTemp();
@@ -433,8 +463,8 @@ void loop(void)
             writeflag = 1;
         }
     }
-    //  current_coil = ((voltage_adc_1) * MAX_CURRENT_COIL)/MAX_VOLTAGE_ADC;
-    //  power = current_coil * COIL_WINDING * VOLTAGE_MAINS;
+    // current_coil = ((voltage_adc_1) * MAX_CURRENT_COIL)/MAX_VOLTAGE_ADC;
+    //power = current_coil * COIL_WINDING * VOLTAGE_MAINS;
 
     if (isPowerType)
     {

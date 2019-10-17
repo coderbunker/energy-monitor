@@ -1,0 +1,7 @@
+Added Component: Designator=IC3(is7021)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetIC1_1 Pin=IC3-1
+Added Pin To Net: NetName=NetIC1_3 Pin=IC3-2
+Added Pin To Net: NetName=NetIC1_4 Pin=IC3-3
+Added Pin To Net: NetName=NetIC1_2 Pin=IC3-4
+Added Member To Class: ClassName=AT long bus (13.3 x 4.2 inches) Member=Component IC3 si7021
