@@ -16,6 +16,13 @@
 #include <SparkFun_Si7021_Breakout_Library.h>
 #include <Adafruit_CCS811.h>
 
+// HTTP
+#include <Bridge.h>
+#include <HttpClient.h>
+
+// JSON
+#include <ArduinoJson.h>
+
 //-----------------------------------------------------------------------------
 #define DEVICE_VERSION 0.9
 #define DEVICE_COUNT 7
@@ -31,41 +38,22 @@
 
 #define SparkFun_Si7021 Weather
 
+//SHA1 finger print of certificate use web browser to view and copy
+const char fingerprint[] PROGMEM = "11e76ce84e2d03e19a9a65f925e0d9b15bc1e76c";
+
 //WiFi Information -- START ---------------------------------------------------
-#define INFLUX_HOST "10.1.0.230"
-#define INFLUX_PORT_POWER 6969
-#define INFLUX_PORT_QUALITY 6970
+String config_host = "chronograf01.monitor.agora-space.com";
 
 const char *ssid = "Agora Space";
 const char *password = "getstuffdone";
 
-const String config[DEVICE_COUNT][TABLE_WIDTH]{
-    //MAC Address          location          room            type
-    {"b8:77:10:c2:dd:bc", "building9", "kitchen", "quality"},
-    {"44:39:69:3a:7d:80", "building1", "dummy", "power"},
-    {"e8:42:69:3a:7d:80", "coderbunker", "artoffice", "power"},
-    {"cd:36:69:3a:7d:80", "coderbunker", "fusebox", "power"},
-    {"3d:78:10:c2:dd:bc", "coderbunker", "artoffice", "quality"},
-    {"fb:61:69:3a:7d:80", "coderbunker", "classroom", "quality"},
-    {"49:7a:10:c2:dd:bc", "coderbunker", "meetingroom", "quality"}};
-
-String nameLocation = "";
-String nameRoom = "";
-String nameType = "";
-
 bool isPowerType;
 bool isQualityType;
 
-String getConfigValue(String mac_address, int index);
 String MacToString(const uint8_t *mac);
 
 //InfluxDB initialisation -- START --------------------------------------------
 WiFiUDP udp;
-
-InfluxDB_UDP influxPowerPort(udp, INFLUX_HOST, INFLUX_PORT_POWER);
-
-InfluxDB_UDP influxSensorPort(udp, INFLUX_HOST, INFLUX_PORT_QUALITY);
-
 InfluxDB_Data dataPower("power_measurement");
 InfluxDB_Data dataAirQuality("quality_measurement");
 //InfluxDB initialisation -- END ----------------------------------------------
@@ -78,6 +66,15 @@ bool tickOccured = false;
 void timerCallback()
 {
     tickOccured = true;
+    if (Timer >= 50)
+    {
+        Timer = 0;
+        getConfigFromPi();
+    }
+    else
+    {
+        Timer++;
+    }
 }
 //Ticker stuff -- UDP ---------------------------------------------------------
 
@@ -123,6 +120,22 @@ String PowerAsString;
 
 int n = 0;
 
+class ArduinoConfig
+{
+public:
+    String location = "";
+    String influx_bd_host = "";
+    String room = "";
+    String mac = "";
+    String sensor_type = "";
+    int quality_port = 0;
+    int power_port = 0;
+    int offset_temperature = 0;
+    int offset_humidity = 0;
+};
+
+ArduinoConfig *arduinoConfig;
+
 void SWI(void)
 {
     writeflag = 0;
@@ -155,6 +168,106 @@ void reconnectWifi(void)
     }
     Serial.print("reconnected");
 }
+
+void getConfigFromPi()
+{
+    WiFiClientSecure httpsClient; //Declare object of class WiFiClient
+
+    Serial.println(config_host);
+
+    Serial.printf("Using fingerprint '%s'\n", fingerprint);
+    httpsClient.setFingerprint(fingerprint);
+    httpsClient.setTimeout(15000); // 15 Seconds
+    delay(1000);
+
+    Serial.print("HTTPS Connecting");
+    int r = 0; //retry counter
+    while ((!httpsClient.connect(config_host, 443)) && (r < 30))
+    {
+        delay(100);
+        Serial.print(".");
+        r++;
+    }
+    if (r == 30)
+    {
+        Serial.println("Connection failed");
+    }
+    else
+    {
+        Serial.println("Connected to web");
+    }
+
+    String ADCData, getData, Link;
+    int adcvalue = analogRead(A0); //Read Analog value of LDR
+    ADCData = String(adcvalue);    //String to interger conversion
+
+    //GET Data
+    uint8_t mac[6];
+    WiFi.macAddress(mac);
+    String mac_address = MacToString(mac);
+    Link = "/api/v1.0/config/" + mac_address;
+
+    Serial.print("requesting URL: ");
+    Serial.println(config_host + Link);
+
+    httpsClient.print(String("GET ") + Link + " HTTP/1.1\r\n" +
+                      "Host: " + config_host + "\r\n" +
+                      "Connection: close\r\n\r\n");
+
+    Serial.println("request sent");
+
+    String respond = "";
+
+    while (httpsClient.connected())
+    {
+        String line = httpsClient.readStringUntil('\n');
+        if (line == "\r")
+        {
+            Serial.println("headers received");
+            break;
+        }
+    }
+
+    Serial.println("reply was:");
+    Serial.println("==========");
+    String line;
+    while (httpsClient.available())
+    {
+        line = httpsClient.readStringUntil('\n'); //Read Line by Line
+        Serial.println(line);
+        respond = respond + line; //Print response
+    }
+    Serial.println("==========");
+    Serial.println("closing connection");
+
+    int i = respond.indexOf('{');
+    String json = respond.substring(i);
+
+    Serial.println("JSON: ");
+    Serial.println(json);
+
+    StaticJsonDocument<1024> jsonDoc;
+    auto parseError = deserializeJson(jsonDoc, json.c_str());
+
+    if (parseError)
+    {
+        Serial.println("parseObject() failed: ");
+        Serial.println(parseError.c_str());
+        return;
+    }
+
+    arduinoConfig = new ArduinoConfig;
+    arduinoConfig->location = jsonDoc["location"].as<String>();
+    arduinoConfig->influx_bd_host = jsonDoc["influx_bd_host"].as<String>();
+    arduinoConfig->room = jsonDoc["room"].as<String>();
+    arduinoConfig->mac = jsonDoc["mac"].as<String>();
+    arduinoConfig->sensor_type = jsonDoc["sensor_type"].as<String>();
+    arduinoConfig->quality_port = jsonDoc["quality_port"];
+    arduinoConfig->power_port = jsonDoc["power_port"];
+    arduinoConfig->offset_temperature = jsonDoc["offset_temperature"];
+    arduinoConfig->offset_humidity = jsonDoc["offset_humidity"];
+}
+
 void setup(void)
 {
     /*-------------------Software Interupt-----------------------------------*/
@@ -178,38 +291,34 @@ void setup(void)
     Serial.println("Wifi Connected to " + String(ssid));
     // WiFi Connection -- END -------------------------------------------------
 
+    getConfigFromPi();
+
     // WiFi Mac Address Mapping -- START --------------------------------------
-    uint8_t mac[6];
-    WiFi.macAddress(mac);
-
-    String mac_address = MacToString(mac);
-
-    nameLocation = getConfigValue(mac_address, INDEX_LOCATION);
-    nameRoom = getConfigValue(mac_address, INDEX_ROOM);
+    String mac_address = arduinoConfig->mac;
 
     Serial.println("\n----- IMPORTANT INFORMATION -----");
-    Serial.println(mac_address);
-    Serial.println(nameLocation);
-    Serial.println(nameRoom);
+    Serial.println(arduinoConfig->mac);
+    Serial.println(arduinoConfig->location);
+    Serial.println(arduinoConfig->room);
     Serial.println("---------------------------------\n");
 
-    if (getConfigValue(mac_address, INDEX_TYPE) == "power")
+    if (arduinoConfig->sensor_type == "power")
     {
         isPowerType = 1;
         isQualityType = 0;
         Serial.println("power");
         Powerflag = 1;
 
-        dataPower.addTag("location", nameLocation);
-        dataPower.addTag("room", nameRoom);
+        dataPower.addTag("location", arduinoConfig->location);
+        dataPower.addTag("room", arduinoConfig->room);
     }
     else
     {
         isPowerType = 0;
         isQualityType = 1;
 
-        dataAirQuality.addTag("location", nameLocation);
-        dataAirQuality.addTag("room", nameRoom);
+        dataAirQuality.addTag("location", arduinoConfig->location);
+        dataAirQuality.addTag("room", arduinoConfig->room);
     }
     // WiFi Mac Address Mapping -- END ----------------------------------------
 
@@ -262,17 +371,22 @@ void loop(void)
     {
         reconnectWifi();
     }
-    if ((tickOccured == true) && (writeflag == 1) || (tickOccured == true) && (Powerflag == 1))
+
+    if ((tickOccured == true) && (writeflag == 1))
     {
         writeflag = 0;
         tickOccured = false;
+
+        InfluxDB_UDP influxPowerPort(udp, arduinoConfig->influx_bd_host, arduinoConfig->power_port);
+        InfluxDB_UDP influxSensorPort(udp, arduinoConfig->influx_bd_host, arduinoConfig->quality_port);
+
         if (isQualityType)
         {
             dataAirQuality.clear(InfluxDB_Data::FIELD);
-            dataAirQuality.addField("temperature_c", String(temperature));
+            dataAirQuality.addField("temperature_c", String(temperature + arduinoConfig->offset_temperature));
             dataAirQuality.addField("TVOC_ppb", String(TVOC));
             dataAirQuality.addField("eCO2_ppm", String(eCO2));
-            dataAirQuality.addField("humidity_RH", String(humidity));
+            dataAirQuality.addField("humidity_RH", String(humidity + arduinoConfig->offset_humidity));
             influxSensorPort.write(dataAirQuality);
         }
 
@@ -339,8 +453,9 @@ void loop(void)
                 Serial.println("ERROR!");
             }
         }
-        if (eCO2 - eCO2OLD >= 500)
+        if (eCO2 - eCO2OLD >= 50)
         {
+            writeflag = 0;
             SWI();
         }
         else
@@ -407,18 +522,6 @@ double calcPower(float voltage)
     double power;
     power = voltage / BURDEN_RESISTOR * COIL_WINDING * VOLTAGE_MAINS;
     return power;
-}
-
-String getConfigValue(String mac_address, int index)
-{
-    for (int index_counter = 0; index_counter < DEVICE_COUNT; index_counter++)
-    {
-        if (config[index_counter][INDEX_MAC] == mac_address)
-        {
-            return config[index_counter][index];
-        }
-    }
-    return "";
 }
 
 String MacToString(const uint8_t *mac)
