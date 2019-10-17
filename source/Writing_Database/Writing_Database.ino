@@ -81,14 +81,8 @@ int Timer = 0;
 bool tickOccured = false;
 
 void timerCallback() {
-  if (Timer >= 50) {
     tickOccured = true;
-    Timer = 0;
-  }
-  else {
-    Timer++;
-  }
-}
+    }
 //Ticker stuff -- UDP ---------------------------------------------------------
 
 Adafruit_ADS1115    ADC_1(0x49);//Create ADS1115 object
@@ -127,6 +121,7 @@ float TVOCOLD = 0;
 float LongRST = 0;
 
 int writeflag = 0;
+int Powerflag =0;
 
 String line;
 String PowerAsString;
@@ -208,6 +203,7 @@ void setup(void)
     isPowerType = 1;
     isQualityType = 0;
     Serial.println("power");
+    Powerflag =1;
 
     dataPower.addTag("location", nameLocation);
     dataPower.addTag("room", nameRoom);
@@ -274,12 +270,13 @@ void loop(void)
   {
     reconnectWifi();
   }
-
-  if ((tickOccured == true) && (writeflag == 1))
+  Serial.println("0");
+  if ((tickOccured == true) && (writeflag == 1) || (tickOccured == true)&&(Powerflag == 1))
   {
     writeflag = 0;
     tickOccured = false;
     if (isQualityType)
+    Serial.println("1");
     {
       dataAirQuality.clear(InfluxDB_Data::FIELD);
       dataAirQuality.addField("temperature_c", String(temperature));
@@ -290,6 +287,9 @@ void loop(void)
     }
     if (isPowerType)
     {
+      Serial.println(power_1);
+      Serial.println(power_3);
+      Serial.println(power_2);
       dataPower.clear(InfluxDB_Data::FIELD);
       dataPower.addField("power1_W", String(power_1));
       dataPower.addField("power2_W", String(power_2));
